@@ -1,0 +1,963 @@
+#======================================================
+#
+# Synopsys Synthesis Scripts (Design Vision dctcl mode)
+#
+#======================================================
+#======================================================
+# (A) Global Parameters
+#======================================================
+set DESIGN "AMED"
+AMED
+set CYCLE 9.8
+9.8
+# set CYCLE $::env(CYCLE_TIME)
+# if {[info exists ::env(CYCLE_TIME)]} {
+#     set cycle $::env(CYCLE_TIME)
+#     puts "INFO: Received CYCLE_TIME = $cycle from Bash script."
+# } else {
+#     # 如果抓不到變數，給定一個安全的預設值，避免 DC 直接崩潰
+#     set cycle 20.0
+#     puts "WARNING: CYCLE_TIME not found in environment, using default 20.0"
+# }
+set INPUT_DLY [expr 0.5*$CYCLE]
+4.9
+set OUTPUT_DLY [expr 0.5*$CYCLE]
+4.9
+#======================================================
+# (B) Read RTL Code
+#======================================================
+# # (B-1) analyze + elaborate
+# set hdlin_auto_save_templates TRUE
+# analyze -f sverilog -define SYNTHESIS MULT_err.v
+# analyze -f sverilog -define SYNTHESIS $DESIGN\.v 
+# # analyze -f sverilog -define SYNTHESIS "$DESIGN\.v MULT_err.sv"
+# elaborate $DESIGN
+# # (B-2) read_sverilog
+# #read_sverilog $DESIGN\.v
+# # (B-3) set current design
+# current_design $DESIGN
+# link
+set hdlin_auto_save_templates TRUE
+TRUE
+# -----------------------------------------------------
+#  Phase 1: Read and Lock the "MULT_err Module" (MULT_err)
+# -----------------------------------------------------
+analyze -f sverilog "MULT_err_SYN.v"
+Running PRESTO HDLC
+Compiling source file ../01_RTL/MULT_err_SYN.v
+Presto compilation completed successfully.
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/standard.sldb'
+1
+elaborate MULT_err
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/gtech.db'
+  Loading link library 'slow'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (MULT_err)
+Elaborated 1 design.
+Current design is now 'MULT_err'.
+1
+current_design MULT_err
+Current design is 'MULT_err'.
+{MULT_err}
+set_max_delay [expr 0.3*$CYCLE] -from [all_inputs] -to [all_outputs]
+1
+set_max_transition 2.0 [all_inputs]
+1
+set_max_capacitance 0.1 [all_inputs]
+1
+set_load 0.05 [all_outputs]
+1
+compile_ultra 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 4 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.0 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler NXT WLM                                                           |
+| Comand Line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 1                                      |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 0                                      |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 1                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 0                                      |
+| Number of Dont Touch Cells                              | 0                                      |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'MULT_err'
+
+Loaded alib file './alib-52/slow.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'MULT_err'
+ Implement Synthetic for 'MULT_err'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:04   15548.2      0.00       0.0     646.5                           16429027.0000
+    0:00:04   15524.4      0.08       0.5     646.5                           16412255.0000
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:00:04   15524.4      0.08       0.5     646.5                           16412255.0000
+    0:00:04   15524.4      0.08       0.5     646.5                           16412255.0000
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:04    9449.4      0.18       0.8       0.0                           9326723.0000
+  Mapping 'MULT_err_DW_mult_tc_1'
+Information: Added key list 'DesignWare' to design 'MULT_err'. (DDB-72)
+    0:00:05    9588.6      0.00       0.0       0.0                           9433559.0000
+    0:00:05    9588.6      0.00       0.0       0.0                           9433559.0000
+    0:00:05    9588.6      0.00       0.0       0.0                           9433559.0000
+    0:00:05    9539.4      0.00       0.0       0.0                           9367384.0000
+    0:00:05    9539.4      0.00       0.0       0.0                           9367384.0000
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9228380.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:05    9396.8      0.00       0.0       0.0                           9225927.0000
+    0:00:05    9245.7      0.00       0.0       0.0                           8976010.0000
+    0:00:05    9245.7      0.00       0.0       0.0                           8976010.0000
+    0:00:05    9245.7      0.00       0.0       0.0                           8976010.0000
+    0:00:06    9238.9      0.00       0.0       0.0                           8969269.0000
+    0:00:06    9181.2      0.00       0.0       0.0                           8899545.0000
+    0:00:06    9181.2      0.00       0.0       0.0                           8899545.0000
+    0:00:06    9181.2      0.00       0.0       0.0                           8899545.0000
+    0:00:06    9181.2      0.00       0.0       0.0                           8899545.0000
+    0:00:06    9181.2      0.00       0.0       0.0                           8899545.0000
+    0:00:06    9181.2      0.00       0.0       0.0                           8899545.0000
+    0:00:06    8906.3      0.00       0.0       0.0                           8694325.0000
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+1
+# Lock the "MULT_err Module" to prevent any modifications during optimization
+set_dont_touch [get_designs MULT_err]
+1
+# -----------------------------------------------------
+# Phase 2: Read, Elaborate, and Link the Main Design (AMED)
+# -----------------------------------------------------
+analyze -f sverilog "$DESIGN\.v"
+Running PRESTO HDLC
+Compiling source file ../01_RTL/AMED.v
+Presto compilation completed successfully.
+1
+elaborate $DESIGN  
+Running PRESTO HDLC
+Warning:  ../01_RTL/AMED.v:35: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:36: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:37: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:38: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:39: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:40: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:41: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:42: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:43: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:77: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:78: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:85: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/AMED.v:86: signed to unsigned part selection occurs. (VER-318)
+
+Statistics for case statements in always block at line 51 in file
+        '../01_RTL/AMED.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            53            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine AMED line 13 in file
+                '../01_RTL/AMED.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       cnt_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine AMED line 33 in file
+                '../01_RTL/AMED.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     matrix_reg      | Flip-flop |  72   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine AMED line 75 in file
+                '../01_RTL/AMED.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      main1_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      main2_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine AMED line 83 in file
+                '../01_RTL/AMED.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     shadow1_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|     shadow2_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine AMED line 91 in file
+                '../01_RTL/AMED.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  shadow1_sync_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|  shadow2_sync_reg   | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine AMED line 106 in file
+                '../01_RTL/AMED.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  shift_buffer_reg   | Flip-flop |  192  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (AMED)
+Elaborated 1 design.
+Current design is now 'AMED'.
+1
+current_design $DESIGN
+Current design is 'AMED'.
+{AMED}
+link
+
+  Linking design 'AMED'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/VLSILAB45/Lab5/02_SYN/AMED.db, etc
+  slow (library)              /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/2022.12/libraries/syn/dw_foundation.sldb
+
+1
+#======================================================
+#  (C) Global Setting
+#======================================================
+#set_wire_load_mode top
+#set_operating_conditions -max WCCOM -min BCCOM
+#set_wire_load_model -name umc18_wl10 -library slow
+#======================================================
+#  (D) Set Design Constraints
+#======================================================
+# (D-1) Setting Clock Constraints
+create_clock -name clk -period $CYCLE [get_ports clk] 
+1
+set_dont_touch_network             [get_clocks clk]
+1
+set_fix_hold                       [get_clocks clk]
+1
+set_clock_uncertainty       0.1    [get_clocks clk]
+1
+# set_clock_latency   -source 0      [get_clocks clk]
+# set_clock_latency           1      [get_clocks clk] 
+set_input_transition        0.5    [all_inputs] 
+1
+set_clock_transition        0.1    [all_clocks] 
+1
+# (D-2) Setting in/out Constraints
+set_input_delay   -max  $INPUT_DLY  -clock clk   [all_inputs] ;  # set_up time check 
+1
+set_input_delay   -min  0           -clock clk   [all_inputs] ;  # hold   time check 
+1
+set_output_delay  -max  $OUTPUT_DLY -clock clk   [all_outputs] ; # set_up time check 
+1
+set_output_delay  -min  0           -clock clk   [all_outputs] ; # hold   time check 
+1
+set_input_delay 0 -clock clk clk
+1
+set_input_delay 0 -clock clk rst_n
+1
+#set_max_delay $CYCLE -from [all_inputs] -to [all_outputs]
+# (D-3) Setting Design Environment
+# set_driving_cell -library umc18io3v5v_slow -lib_cell P2C    -pin {Y}  [get_ports clk]
+# set_driving_cell -library umc18io3v5v_slow -lib_cell P2C    -pin {Y}  [remove_from_collection [all_inputs] [get_ports clk]]
+# set_load  [load_of "umc18io3v5v_slow/P8C/A"]       [all_outputs] ; # ~= 0.038
+set_load 0.05 [all_outputs]
+1
+# (D-4) Setting DRC Constraint
+#set_max_delay           0     ; # Optimize delay max effort                 
+#set_max_area            0      ; # Optimize area max effort           
+set_max_transition      3       [all_inputs]   ; # U18 LUT Max Transition Value  
+1
+set_max_capacitance     0.15    [all_inputs]   ; # U18 LUT Max Capacitance Value
+1
+set_max_fanout          10      [all_inputs]
+1
+# set_dont_use slow/JKFF*
+#set_dont_touch [get_cells core_reg_macro]
+#set hdlin_ff_always_sync_set_reset true
+# (D-5) Report Clock skew
+report_clock -skew clk
+Information: Updating design information... (UID-85)
+Warning: Design 'AMED' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : clock_skew
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:00 2026
+****************************************
+
+                 Rise      Fall  Min Rise  Min fall        Uncertainty
+Object          Delay     Delay     Delay     Delay     Plus      Minus
+--------------------------------------------------------------------------------
+clk                 -         -         -         -      0.10      0.10
+
+                 Max Transition      Min Transition
+Object           Rise      Fall      Rise      Fall
+-------------------------------------------------------
+clk              0.10      0.10      0.10      0.10
+1
+check_timing
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+
+Information: Checking unconstrained_endpoints...
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1
+#======================================================
+#  (E) Optimization
+#======================================================
+check_design > Report/$DESIGN\.check
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+set_fix_hold [all_clocks]
+1
+# set_dont_touch [get_cells -hierarchical -filter "ref_name =~ *MULT_err*"]
+# set_ungroup [get_designs MULT_err*] false
+compile_ultra -no_autoungroup
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 4 cores. (OPT-1500)
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler NXT WLM                                                           |
+| Comand Line  | compile_ultra -no_autoungroup                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 1790                                   |
+| Number of User Hierarchies                              | 2                                      |
+| Sequential Cell Count                                   | 365                                    |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 1347                                   |
+| Number of Dont Touch Nets                               | 1571                                   |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 35 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'AMED'
+
+Warning: The derived toggle-rate value (0.204082) for the clock net 'clk' conflicts with the annotated value (0.100000). Using the set_switching_activity value. (PWR-12)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'AMED'
+Information: Added key list 'DesignWare' to design 'AMED'. (DDB-72)
+Information: In design 'AMED', the register 'shift_buffer_reg[17]' is removed because it is merged to 'shift_buffer_reg[16]'. (OPT-1215)
+Information: In design 'AMED', the register 'shift_buffer_reg[18]' is removed because it is merged to 'shift_buffer_reg[16]'. (OPT-1215)
+Information: In design 'AMED', the register 'shift_buffer_reg[19]' is removed because it is merged to 'shift_buffer_reg[16]'. (OPT-1215)
+Information: In design 'AMED', the register 'shift_buffer_reg[20]' is removed because it is merged to 'shift_buffer_reg[16]'. (OPT-1215)
+Information: In design 'AMED', the register 'shift_buffer_reg[21]' is removed because it is merged to 'shift_buffer_reg[16]'. (OPT-1215)
+Information: In design 'AMED', the register 'shift_buffer_reg[22]' is removed because it is merged to 'shift_buffer_reg[16]'. (OPT-1215)
+Information: In design 'AMED', the register 'shift_buffer_reg[23]' is removed because it is merged to 'shift_buffer_reg[16]'. (OPT-1215)
+Information: The register 'main2_reg[0]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[1]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[2]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[3]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[4]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[5]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[6]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[7]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[8]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[9]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[10]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[11]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[12]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[13]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[14]' will be removed. (OPT-1207)
+Information: The register 'main2_reg[15]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[0]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[1]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[2]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[3]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[4]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[5]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[6]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[7]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[8]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[9]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[10]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[11]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[12]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[13]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[14]' will be removed. (OPT-1207)
+Information: The register 'main1_reg[15]' will be removed. (OPT-1207)
+ Implement Synthetic for 'AMED'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:05   42976.5      0.00       0.0       0.0                           42459620.0000      0.00  
+    0:00:05   42962.9      0.00       0.0      69.3                           42449512.0000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:07   33418.4      0.22       1.3       9.1                           27558506.0000      0.00  
+    0:00:07   33494.8      0.00       0.0       9.1                           27604758.0000      0.00  
+    0:00:07   33494.8      0.00       0.0       9.1                           27604758.0000      0.00  
+    0:00:07   33045.0      0.00       0.0       2.6                           27260812.0000      0.00  
+    0:00:07   33045.0      0.00       0.0       2.6                           27260812.0000      0.00  
+    0:00:07   33045.0      0.00       0.0       2.6                           27260812.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:08   32846.4      0.00       0.0       0.0                           26997498.0000      0.00  
+    0:00:08   32846.4      0.00       0.0       0.0                           26997498.0000      0.00  
+    0:00:08   32846.4      0.00       0.0       0.0                           26997498.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:08   32751.3      0.00       0.0       0.0                           26859572.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+    0:00:08   33292.8      0.00       0.0       0.0                           27413892.0000      0.00  
+    0:00:08   33292.8      0.00       0.0       0.0                           27413892.0000      0.00  
+    0:00:08   33292.8      0.00       0.0       0.0                           27413892.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:08   32966.9      0.00       0.0       0.0                           26996160.0000      0.00  
+    0:00:09   32724.2      0.00       0.0       0.0                           26756404.0000      0.00  
+    0:00:09   32724.2      0.00       0.0       0.0                           26756404.0000      0.00  
+    0:00:09   32724.2      0.00       0.0       0.0                           26756404.0000      0.00  
+    0:00:09   32722.5      0.00       0.0       0.0                           26754170.0000      0.00  
+    0:00:09   32668.2      0.00       0.0       0.0                           26697280.0000      0.00  
+    0:00:09   32668.2      0.00       0.0       0.0                           26697280.0000      0.00  
+    0:00:09   32668.2      0.00       0.0       0.0                           26697280.0000      0.00  
+    0:00:09   32668.2      0.00       0.0       0.0                           26697280.0000      0.00  
+    0:00:09   32668.2      0.00       0.0       0.0                           26697280.0000      0.00  
+    0:00:09   32668.2      0.00       0.0       0.0                           26697280.0000      0.00  
+    0:00:09   32651.2      0.00       0.0       0.0                           26684234.0000      0.00  
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#uniquify
+#compile
+#======================================================
+#  (F) Output Reports 
+#======================================================
+report_design  >  Report/$DESIGN\.design
+report_resource >  Report/$DESIGN\.resource
+report_timing -max_paths 3 >  Report/$DESIGN\.timing
+report_area >  Report/$DESIGN\.area
+report_power > Report/$DESIGN\.power
+report_clock > Report/$DESIGN\.clock
+report_port >  Report/$DESIGN\.port
+report_power >  Report/$DESIGN\.power
+report_reference > Report/$DESIGN\.reference
+#======================================================
+#  (G) Change Naming Rule
+#======================================================
+set bus_inference_style "%s\[%d\]"
+%s[%d]
+set bus_naming_style "%s\[%d\]"
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _" -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _[]" -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+# Remove the correct Multiplier (MULT) from the design
+# remove_design *MULT_err*
+#======================================================
+#  (H) Output Results
+#======================================================
+set verilogout_higher_designs_first true
+true
+write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
+Writing verilog file '/home/VLSILAB45/Lab5/02_SYN/Netlist/AMED_SYN.v'.
+1
+write -format ddc     -hierarchy -output $DESIGN\_SYN.ddc
+Writing ddc file 'AMED_SYN.ddc'.
+1
+write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
+Information: Writing timing information to file '/home/VLSILAB45/Lab5/02_SYN/Netlist/AMED_SYN.sdf'. (WT-3)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+#======================================================
+#  (I) Finish and Quit
+#======================================================
+report_power
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:11 2026
+****************************************
+
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  = 932.5023 uW   (85%)
+  Net Switching Power  = 161.5763 uW   (15%)
+                         ---------
+Total Dynamic Power    =   1.0941 mW  (100%)
+
+Cell Leakage Power     =  26.6842 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.5586            0.0000            0.0000            0.5586  (  49.85%)  i
+register       6.1656e-02        1.0229e-02        6.7306e+06        7.8615e-02  (   7.01%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.3122            0.1513        1.9954e+07            0.4835  (  43.14%)
+--------------------------------------------------------------------------------------------------
+Total              0.9325 mW         0.1616 mW     2.6684e+07 pW         1.1208 mW
+1
+report_area
+ 
+****************************************
+Report : area
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:11 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+Number of ports:                          424
+Number of nets:                          2859
+Number of cells:                         2416
+Number of combinational cells:           2057
+Number of sequential cells:               326
+Number of macros/black boxes:               0
+Number of buf/inv:                        233
+Number of references:                      53
+
+Combinational area:              23386.777348
+Buf/Inv area:                     1052.387997
+Noncombinational area:            9264.409088
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 32651.186436
+Total area:                 undefined
+1
+report_timing 
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:11 2026
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: cnt_reg_2_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: shadow1_reg_15_
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  cnt_reg_2_/CK (DFFRX2)                   0.00       0.00 r
+  cnt_reg_2_/Q (DFFRX2)                    0.58       0.58 f
+  U922/Y (NOR2X1)                          0.18       0.76 r
+  U745/Y (NAND2XL)                         0.13       0.89 f
+  U923/Y (NOR2X1)                          0.17       1.05 r
+  U924/Y (INVX3)                           0.13       1.18 f
+  U780/Y (OAI2BB1X1)                       0.20       1.38 r
+  U858/Y (AOI211XL)                        0.15       1.53 f
+  U766/Y (OA21X4)                          0.19       1.72 f
+  U741/Y (INVX4)                           0.29       2.01 r
+  u_mult1/a[11] (MULT_err)                 0.00       2.01 r
+  u_mult1/U268/Y (XNOR2X4)                 0.35       2.36 r
+  u_mult1/U269/Y (NAND2X6)                 0.15       2.51 f
+  u_mult1/U297/Y (OAI22X1)                 0.11       2.62 r
+  u_mult1/U300/S (ADDHXL)                  0.33       2.96 r
+  u_mult1/mult_x_1_U404/CO (CMPR42X2)      0.52       3.47 r
+  u_mult1/mult_x_1_U400/S (CMPR42X2)       0.55       4.02 f
+  u_mult1/U141/Y (NOR2X1)                  0.15       4.18 r
+  u_mult1/U236/Y (OAI21X1)                 0.11       4.29 f
+  u_mult1/U237/Y (AOI21X2)                 0.13       4.41 r
+  u_mult1/U463/Y (INVX3)                   0.07       4.49 f
+  u_mult1/U604/Y (XNOR2X1)                 0.10       4.59 r
+  u_mult1/out[15] (MULT_err)               0.00       4.59 r
+  U753/Y (INVX1)                           0.06       4.64 f
+  shadow1_reg_15_/D (DFFNSRX2)             0.00       4.64 f
+  data arrival time                                   4.64
+
+  clock clk (fall edge)                    4.90       4.90
+  clock network delay (ideal)              0.00       4.90
+  clock uncertainty                       -0.10       4.80
+  shadow1_reg_15_/CKN (DFFNSRX2)           0.00       4.80 f
+  library setup time                      -0.15       4.65
+  data required time                                  4.65
+  -----------------------------------------------------------
+  data required time                                  4.65
+  data arrival time                                  -4.64
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
+exit
+
+Memory usage for this session 233 Mbytes.
+Memory usage for this session including child processes 445 Mbytes.
+CPU usage for this session 27 seconds ( 0.01 hours ).
+Elapsed time for this session 24 seconds ( 0.01 hours ).
+
+Thank you...
+

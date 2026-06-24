@@ -1,0 +1,671 @@
+#======================================================
+#
+# Synopsys Synthesis Scripts (Design Vision dctcl mode)
+#
+#======================================================
+#======================================================
+# (A) Global Parameters
+#======================================================
+set DESIGN "DART"
+DART
+set CYCLE 3.0
+3.0
+set INPUT_DLY [expr 0.5*$CYCLE]
+1.5
+set OUTPUT_DLY [expr 0.5*$CYCLE]
+1.5
+#======================================================
+# (B) Read RTL Code
+#======================================================
+# (B-1) analyze + elaborate
+set hdlin_auto_save_templates TRUE
+TRUE
+analyze -f sverilog $DESIGN\.v 
+Running PRESTO HDLC
+Compiling source file ../01_RTL/DART.v
+Opening include file ../01_RTL/DART_FSM.v
+Opening include file ../01_RTL/DART_COUNTER.v
+Opening include file ../01_RTL/DART_UPDATE_EN.v
+Opening include file ../01_RTL/DART_SCORE_CALC.v
+Opening include file ../01_RTL/DART_PLAYER_SCORE.v
+Opening include file ../01_RTL/DART_GAME_OVER.v
+Opening include file ../01_RTL/DART_WINNER.v
+Opening include file ../01_RTL/DART_OUT_VALID.v
+Opening include file ../01_RTL/DART_OUT_WINNER.v
+Opening include file ../01_RTL/DART_NEXT_SCORE.v
+Presto compilation completed successfully.
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/standard.sldb'
+1
+elaborate $DESIGN  
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/gtech.db'
+  Loading link library 'slow'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (DART)
+Elaborated 1 design.
+Current design is now 'DART'.
+Information: Building the design 'DART_FSM'. (HDL-193)
+
+Statistics for case statements in always block at line 21 in file
+        '../01_RTL/DART_FSM.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            22            |    auto/auto     |
+|            24            |    auto/auto     |
+|            30            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine DART_FSM line 14 in file
+                '../01_RTL/DART_FSM.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (DART_FSM)
+Information: Building the design 'DART_COUNTER'. (HDL-193)
+
+Statistics for case statements in always block at line 13 in file
+        '../01_RTL/DART_COUNTER.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            16            |    auto/auto     |
+|            18            |    auto/auto     |
+|            24            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine DART_COUNTER line 13 in file
+                '../01_RTL/DART_COUNTER.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   dart_count_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (DART_COUNTER)
+Information: Building the design 'DART_UPDATE_EN'. (HDL-193)
+Presto compilation completed successfully. (DART_UPDATE_EN)
+Information: Building the design 'DART_SCORE_CALC'. (HDL-193)
+
+Statistics for case statements in always block at line 21 in file
+        '../01_RTL/DART_SCORE_CALC.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            22            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (DART_SCORE_CALC)
+Information: Building the design 'DART_NEXT_SCORE'. (HDL-193)
+Presto compilation completed successfully. (DART_NEXT_SCORE)
+Information: Building the design 'DART_PLAYER_SCORE'. (HDL-193)
+
+Statistics for case statements in always block at line 15 in file
+        '../01_RTL/DART_PLAYER_SCORE.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            19            |    auto/auto     |
+|            21            |    auto/auto     |
+|            27            |    auto/auto     |
+|            29            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine DART_PLAYER_SCORE line 15 in file
+                '../01_RTL/DART_PLAYER_SCORE.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      score_reg      | Flip-flop |   5   |  Y  | N  | N  | Y  | N  | N  | N  |
+|      score_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (DART_PLAYER_SCORE)
+Information: Building the design 'DART_GAME_OVER'. (HDL-193)
+Presto compilation completed successfully. (DART_GAME_OVER)
+Information: Building the design 'DART_WINNER'. (HDL-193)
+
+Statistics for case statements in always block at line 7 in file
+        '../01_RTL/DART_WINNER.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            8             |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (DART_WINNER)
+Information: Building the design 'DART_OUT_VALID'. (HDL-193)
+
+Statistics for case statements in always block at line 10 in file
+        '../01_RTL/DART_OUT_VALID.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            14            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine DART_OUT_VALID line 10 in file
+                '../01_RTL/DART_OUT_VALID.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (DART_OUT_VALID)
+Information: Building the design 'DART_OUT_WINNER'. (HDL-193)
+
+Statistics for case statements in always block at line 11 in file
+        '../01_RTL/DART_OUT_WINNER.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            15            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine DART_OUT_WINNER line 11 in file
+                '../01_RTL/DART_OUT_WINNER.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   out_winner_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (DART_OUT_WINNER)
+1
+# (B-2) read_sverilog
+#read_sverilog $DESIGN\.v
+# (B-3) set current design
+current_design $DESIGN
+Current design is 'DART'.
+{DART}
+link
+
+  Linking design 'DART'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (11 designs)              /home/VLSILAB45/Lab2/02_SYN/DART.db, etc
+  slow (library)              /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/2022.12/libraries/syn/dw_foundation.sldb
+
+1
+#======================================================
+#  (C) Global Setting
+#======================================================
+#set_wire_load_mode top
+#set_operating_conditions -max WCCOM -min BCCOM
+#set_wire_load_model -name umc18_wl10 -library slow
+#======================================================
+#  (D) Set Design Constraints
+#======================================================
+# (D-1) Setting Clock Constraints
+create_clock -name clk -period $CYCLE [get_ports clk] 
+1
+set_dont_touch_network             [get_clocks clk]
+1
+set_fix_hold                       [get_clocks clk]
+1
+set_clock_uncertainty       0.1    [get_clocks clk]
+1
+# set_clock_latency   -source 0      [get_clocks clk]
+# set_clock_latency           1      [get_clocks clk] 
+set_input_transition        0.5    [all_inputs] 
+1
+set_clock_transition        0.1    [all_clocks] 
+1
+# (D-2) Setting in/out Constraints
+set_input_delay   -max  $INPUT_DLY  -clock clk   [all_inputs] ;  # set_up time check 
+1
+set_input_delay   -min  0           -clock clk   [all_inputs] ;  # hold   time check 
+1
+set_output_delay  -max  $OUTPUT_DLY -clock clk   [all_outputs] ; # set_up time check 
+1
+set_output_delay  -min  0           -clock clk   [all_outputs] ; # hold   time check 
+1
+set_input_delay 0 -clock clk clk
+1
+set_input_delay 0 -clock clk rst_n
+1
+#set_max_delay $CYCLE -from [all_inputs] -to [all_outputs]
+# (D-3) Setting Design Environment
+# set_driving_cell -library umc18io3v5v_slow -lib_cell P2C    -pin {Y}  [get_ports clk]
+# set_driving_cell -library umc18io3v5v_slow -lib_cell P2C    -pin {Y}  [remove_from_collection [all_inputs] [get_ports clk]]
+# set_load  [load_of "umc18io3v5v_slow/P8C/A"]       [all_outputs] ; # ~= 0.038
+set_load 0.05 [all_outputs]
+1
+# (D-4) Setting DRC Constraint
+#set_max_delay           0     ; # Optimize delay max effort                 
+#set_max_area            0      ; # Optimize area max effort           
+set_max_transition      3       [all_inputs]   ; # U18 LUT Max Transition Value  
+1
+set_max_capacitance     0.15    [all_inputs]   ; # U18 LUT Max Capacitance Value
+1
+set_max_fanout          10      [all_inputs]
+1
+# set_dont_use slow/JKFF*
+#set_dont_touch [get_cells core_reg_macro]
+#set hdlin_ff_always_sync_set_reset true
+# (D-5) Report Clock skew
+report_clock -skew clk
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : clock_skew
+Design : DART
+Version: U-2022.12
+Date   : Fri Apr 24 02:41:35 2026
+****************************************
+
+                 Rise      Fall  Min Rise  Min fall        Uncertainty
+Object          Delay     Delay     Delay     Delay     Plus      Minus
+--------------------------------------------------------------------------------
+clk                 -         -         -         -      0.10      0.10
+
+                 Max Transition      Min Transition
+Object           Rise      Fall      Rise      Fall
+-------------------------------------------------------
+clk              0.10      0.10      0.10      0.10
+1
+check_timing
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+
+Information: Checking unconstrained_endpoints...
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1
+#======================================================
+#  (E) Optimization
+#======================================================
+check_design > Report/$DESIGN\.check
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+set_fix_hold [all_clocks]
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 4 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.0 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler NXT WLM                                                           |
+| Comand Line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 176                                    |
+| Number of User Hierarchies                              | 12                                     |
+| Sequential Cell Count                                   | 27                                     |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 66                                     |
+| Number of Dont Touch Nets                               | 7                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 4 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+Information: Uniquified 2 instances of design 'DART_NEXT_SCORE'. (OPT-1056)
+Information: Uniquified 2 instances of design 'DART_PLAYER_SCORE'. (OPT-1056)
+  Simplifying Design 'DART'
+
+Loaded alib file './alib-52/slow.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy u_fsm before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_counter before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_update_en before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_score_calc before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_next_score1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_p0_score before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_game_over before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_winner before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_out_valid before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_out_winner before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_next_score2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_p1_score before Pass 1 (OPT-776)
+Information: Ungrouping 12 of 13 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'DART'
+ Implement Synthetic for 'DART'.
+Information: Added key list 'DesignWare' to design 'DART'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:05    5747.4      0.07       0.8       0.0                           4639261.0000      0.00  
+    0:00:05    5667.6      0.54       8.6       0.0                           4590950.5000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:00:05    5640.5      0.54       8.6       0.0                           4575478.0000      0.00  
+    0:00:05    5613.3      0.54       8.6       0.0                           4560971.0000      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:05    3089.3      0.47       5.9       0.0                           2196917.0000      0.00  
+    0:00:05    3476.3      0.15       2.2       0.0                           2542900.2500      0.00  
+    0:00:05    3476.3      0.15       2.2       0.0                           2542900.2500      0.00  
+    0:00:05    3493.2      0.15       2.4       0.0                           2559666.0000      0.00  
+    0:00:05    3493.2      0.15       2.4       0.0                           2559666.0000      0.00  
+    0:00:05    3467.8      0.33       2.9       0.0                           2550541.2500      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:06    3418.6      0.33       3.4       0.0                           2503484.2500      0.00  
+    0:00:06    3652.8      0.11       1.2       0.0                           2763549.2500      0.00  
+    0:00:06    3652.8      0.11       1.2       0.0                           2763549.2500      0.00  
+    0:00:06    3656.2      0.11       1.2       0.0                           2767667.0000      0.00  
+    0:00:06    3656.2      0.11       1.2       0.0                           2767667.0000      0.00  
+    0:00:06    3924.4      0.11       1.5       0.0                           3014666.0000      0.00  
+    0:00:06    3924.4      0.11       1.5       0.0                           3014666.0000      0.00  
+    0:00:06    3954.9      0.10       1.4       0.0                           3046258.5000      0.00  
+    0:00:06    3954.9      0.10       1.4       0.0                           3046258.5000      0.00  
+    0:00:06    4229.9      0.10       1.3       0.0                           3323659.7500      0.00  
+    0:00:06    4229.9      0.10       1.3       0.0                           3323659.7500      0.00  
+    0:00:06    4747.6      0.02       0.1       0.0                           3841479.7500      0.00  
+    0:00:06    4747.6      0.02       0.1       0.0                           3841479.7500      0.00  
+    0:00:07    4747.6      0.02       0.1       0.0                           3841479.7500      0.00  
+    0:00:07    4747.6      0.02       0.1       0.0                           3841479.7500      0.00  
+    0:00:07    4779.9      0.01       0.1       0.0                           3872736.0000      0.00  
+    0:00:07    4779.9      0.01       0.1       0.0                           3872736.0000      0.00  
+    0:00:07    4779.9      0.01       0.1       0.0                           3872736.0000      0.00  
+    0:00:07    4779.9      0.01       0.1       0.0                           3872736.0000      0.00  
+    0:00:07    4779.9      0.01       0.1       0.0                           3872736.0000      0.00  
+    0:00:07    4779.9      0.01       0.1       0.0                           3872736.0000      0.00  
+    0:00:07    4779.9      0.01       0.1       0.0                           3872736.0000      0.00  
+    0:00:07    4683.1      0.00       0.0       0.0                           3802617.5000      0.00  
+    0:00:07    4683.1      0.00       0.0       0.0                           3802617.5000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:07    4683.1      0.00       0.0       0.0                           3802617.5000      0.00  
+    0:00:07    4683.1      0.00       0.0       0.0                           3802617.5000      0.00  
+    0:00:07    4683.1      0.00       0.0       0.0                           3802617.5000      0.00  
+    0:00:07    4683.1      0.00       0.0       0.0                           3802617.5000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:07    4586.4      0.00       0.0       0.0                           3691222.0000      0.00  
+    0:00:07    4450.6      0.00       0.0       0.0                           3539339.2500      0.00  
+    0:00:07    4418.3      0.00       0.0       0.0                           3507773.5000      0.00  
+    0:00:07    4418.3      0.00       0.0       0.0                           3507773.5000      0.00  
+    0:00:07    4418.3      0.00       0.0       0.0                           3507773.5000      0.00  
+    0:00:07    4387.8      0.00       0.0       0.0                           3471696.0000      0.00  
+    0:00:07    4387.8      0.00       0.0       0.0                           3471696.0000      0.00  
+    0:00:07    4387.8      0.00       0.0       0.0                           3471696.0000      0.00  
+    0:00:07    4387.8      0.00       0.0       0.0                           3471696.0000      0.00  
+    0:00:07    4387.8      0.00       0.0       0.0                           3471696.0000      0.00  
+    0:00:07    4387.8      0.00       0.0       0.0                           3471696.0000      0.00  
+    0:00:08    4207.9      0.00       0.0       0.0                           3304011.7500      0.00  
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#uniquify
+#compile
+#======================================================
+#  (F) Output Reports 
+#======================================================
+report_design  >  Report/$DESIGN\.design
+report_resource >  Report/$DESIGN\.resource
+report_timing -max_paths 3 >  Report/$DESIGN\.timing
+report_area >  Report/$DESIGN\.area
+report_power > Report/$DESIGN\.power
+report_clock > Report/$DESIGN\.clock
+report_port >  Report/$DESIGN\.port
+report_power >  Report/$DESIGN\.power
+#report_reference > Report/$DESIGN\.reference
+#======================================================
+#  (G) Change Naming Rule
+#======================================================
+set bus_inference_style "%s\[%d\]"
+%s[%d]
+set bus_naming_style "%s\[%d\]"
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _" -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _[]" -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+#======================================================
+#  (H) Output Results
+#======================================================
+set verilogout_higher_designs_first true
+true
+write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
+Writing verilog file '/home/VLSILAB45/Lab2/02_SYN/Netlist/DART_SYN.v'.
+1
+write -format ddc     -hierarchy -output $DESIGN\_SYN.ddc
+Writing ddc file 'DART_SYN.ddc'.
+1
+write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
+Information: Writing timing information to file '/home/VLSILAB45/Lab2/02_SYN/Netlist/DART_SYN.sdf'. (WT-3)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+#======================================================
+#  (I) Finish and Quit
+#======================================================
+report_area
+ 
+****************************************
+Report : area
+Design : DART
+Version: U-2022.12
+Date   : Fri Apr 24 02:41:45 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+Number of ports:                           13
+Number of nets:                           366
+Number of cells:                          335
+Number of combinational cells:            308
+Number of sequential cells:                27
+Number of macros/black boxes:               0
+Number of buf/inv:                         64
+Number of references:                      98
+
+Combinational area:               3218.270402
+Buf/Inv area:                      492.246000
+Noncombinational area:             989.584198
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  4207.854600
+Total area:                 undefined
+1
+report_timing 
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DART
+Version: U-2022.12
+Date   : Fri Apr 24 02:41:45 2026
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: points[3] (input port clocked by clk)
+  Endpoint: u_p1_score_score_reg_2_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.50       1.50 f
+  points[3] (in)                           0.00       1.50 f
+  U188/Y (NAND2X6)                         0.14       1.64 r
+  U339/Y (XOR2X4)                          0.12       1.76 f
+  U257/Y (NAND3X2)                         0.08       1.84 r
+  U355/Y (OAI2BB1X4)                       0.11       1.95 f
+  U296/Y (BUFX4)                           0.14       2.09 f
+  U330/Y (AOI21X4)                         0.10       2.19 r
+  U282/Y (NAND3X4)                         0.09       2.28 f
+  U180/Y (NOR2X4)                          0.09       2.37 r
+  U327/Y (AOI21X4)                         0.10       2.47 f
+  U433/Y (NOR3X2)                          0.10       2.57 r
+  U278/Y (XOR2X2)                          0.16       2.73 f
+  U318/Y (NAND2X2)                         0.06       2.78 r
+  u_p1_score_score_reg_2_/D (DFFSX2)       0.00       2.78 r
+  data arrival time                                   2.78
+
+  clock clk (rise edge)                    3.00       3.00
+  clock network delay (ideal)              0.00       3.00
+  clock uncertainty                       -0.10       2.90
+  u_p1_score_score_reg_2_/CK (DFFSX2)      0.00       2.90 r
+  library setup time                      -0.11       2.79
+  data required time                                  2.79
+  -----------------------------------------------------------
+  data required time                                  2.79
+  data arrival time                                  -2.78
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
+exit
+
+Memory usage for this session 226 Mbytes.
+Memory usage for this session including child processes 382 Mbytes.
+CPU usage for this session 18 seconds ( 0.01 hours ).
+Elapsed time for this session 16 seconds ( 0.00 hours ).
+
+Thank you...
+

@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : port
+Design : DART
+Version: U-2022.12
+Date   : Fri Apr 24 02:41:45 2026
+****************************************
+
+
+
+Attributes:
+    d - dont_touch_network
+
+                       Pin      Wire     Max     Max     Connection
+Port           Dir     Load     Load     Trans   Cap     Class      Attrs
+--------------------------------------------------------------------------------
+clk            in      0.0000   0.0000    3.00    0.15   --         d
+in_valid       in      0.0000   0.0000    3.00    0.15   --         
+is_double      in      0.0000   0.0000    3.00    0.15   --         
+is_triple      in      0.0000   0.0000    3.00    0.15   --         
+player         in      0.0000   0.0000    3.00    0.15   --         
+points[0]      in      0.0000   0.0000    3.00    0.15   --         
+points[1]      in      0.0000   0.0000    3.00    0.15   --         
+points[2]      in      0.0000   0.0000    3.00    0.15   --         
+points[3]      in      0.0000   0.0000    3.00    0.15   --         
+points[4]      in      0.0000   0.0000    3.00    0.15   --         
+rst_n          in      0.0000   0.0000    3.00    0.15   --         
+out_valid      out     0.0500   0.0000   --      --      --         
+out_winner     out     0.0500   0.0000   --      --      --         
+
+1

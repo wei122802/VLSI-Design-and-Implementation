@@ -1,0 +1,16 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Tue May 19 04:09:26 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Nets                                                                2
+    Unloaded nets (LINT-2)                                          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'FIFO', net 'net51' driven by pin 'C1542/Z' has no loads. (LINT-2)
+Warning: In design 'FIFO', net 'net50' driven by pin 'C1538/Z' has no loads. (LINT-2)
+1

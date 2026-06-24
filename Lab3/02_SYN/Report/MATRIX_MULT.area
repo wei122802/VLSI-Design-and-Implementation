@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : MATRIX_MULT
+Version: U-2022.12
+Date   : Thu May  7 05:49:51 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+Number of ports:                           88
+Number of nets:                         33559
+Number of cells:                        31902
+Number of combinational cells:          29954
+Number of sequential cells:              1881
+Number of macros/black boxes:               0
+Number of buf/inv:                       6109
+Number of references:                     151
+
+Combinational area:             411280.016796
+Buf/Inv area:                    26258.777660
+Noncombinational area:           62233.474348
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                473513.491144
+Total area:                 undefined
+1

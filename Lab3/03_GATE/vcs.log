@@ -1,0 +1,680 @@
+Command: vcs -timescale=1ns/1fs -j4 -sverilog +v2k -full64 -Mupdate -R -debug_access+all \
+-f filelist.f -o simv -l vcs.log -v /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v \
++define+GATE +neg_tchk
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Fri May 15 00:21:45 2026
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file 'TESTBED.v'
+Parsing included file 'PATTERN.v'.
+Back to file 'TESTBED.v'.
+Parsing included file 'MATRIX_MULT_SYN.v'.
+Back to file 'TESTBED.v'.
+Parsing library file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v'
+Top Level Modules:
+       TESTBED
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 3934
+MATRIX_MULT, "DFFRX1 in_cnt_reg_4_( .D (N114),  .CK (clk),  .RN (rst_n),  .Q (in_cnt[4]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 3943
+MATRIX_MULT, "DFFRX1 out_cnt_reg_0_( .D (N123),  .CK (clk),  .RN (rst_n),  .Q (out_cnt[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 3944
+MATRIX_MULT, "DFFRX1 out_cnt_reg_1_( .D (N124),  .CK (clk),  .RN (rst_n),  .Q (out_cnt[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 3947
+MATRIX_MULT, "DFFRX1 out_cnt_reg_3_( .D (N126),  .CK (clk),  .RN (rst_n),  .Q (out_cnt[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 3950
+MATRIX_MULT, "DFFRX1 out_cnt_reg_5_( .D (N128),  .CK (clk),  .RN (rst_n),  .Q (out_cnt[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5009
+MATRIX_MULT, "DFFRX1 out_valid_reg( .D (n33684),  .CK (clk),  .RN (n33775),  .Q (out_valid));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5010
+MATRIX_MULT, "DFFRX1 out_data_reg_19_( .D (N149),  .CK (clk),  .RN (n33775),  .Q (out_data[19]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5012
+MATRIX_MULT, "DFFRX1 out_data_reg_18_( .D (N148),  .CK (clk),  .RN (n33775),  .Q (out_data[18]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5014
+MATRIX_MULT, "DFFRX1 out_data_reg_17_( .D (N147),  .CK (clk),  .RN (n33775),  .Q (out_data[17]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5016
+MATRIX_MULT, "DFFRX1 out_data_reg_16_( .D (N146),  .CK (clk),  .RN (n33775),  .Q (out_data[16]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5018
+MATRIX_MULT, "DFFRX1 out_data_reg_15_( .D (N145),  .CK (clk),  .RN (n33775),  .Q (out_data[15]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5020
+MATRIX_MULT, "DFFRX1 out_data_reg_14_( .D (N144),  .CK (clk),  .RN (n33775),  .Q (out_data[14]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5022
+MATRIX_MULT, "DFFRX1 out_data_reg_13_( .D (N143),  .CK (clk),  .RN (n33775),  .Q (out_data[13]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5024
+MATRIX_MULT, "DFFRX1 out_data_reg_12_( .D (N142),  .CK (clk),  .RN (n33775),  .Q (out_data[12]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5026
+MATRIX_MULT, "DFFRX1 out_data_reg_11_( .D (N141),  .CK (clk),  .RN (n33775),  .Q (out_data[11]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5028
+MATRIX_MULT, "DFFRX1 out_data_reg_10_( .D (N140),  .CK (clk),  .RN (n33775),  .Q (out_data[10]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5030
+MATRIX_MULT, "DFFRX1 out_data_reg_9_( .D (N139),  .CK (clk),  .RN (n33775),  .Q (out_data[9]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5031
+MATRIX_MULT, "DFFRX1 out_data_reg_8_( .D (N138),  .CK (clk),  .RN (n33775),  .Q (out_data[8]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5032
+MATRIX_MULT, "DFFRX1 out_data_reg_7_( .D (N137),  .CK (clk),  .RN (n33775),  .Q (out_data[7]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5033
+MATRIX_MULT, "DFFRX1 out_data_reg_6_( .D (N136),  .CK (clk),  .RN (n33775),  .Q (out_data[6]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5034
+MATRIX_MULT, "DFFRX1 out_data_reg_5_( .D (N135),  .CK (clk),  .RN (n33775),  .Q (out_data[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5035
+MATRIX_MULT, "DFFRX1 out_data_reg_4_( .D (N134),  .CK (clk),  .RN (n33775),  .Q (out_data[4]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5036
+MATRIX_MULT, "DFFRX1 out_data_reg_3_( .D (N133),  .CK (clk),  .RN (n33775),  .Q (out_data[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5037
+MATRIX_MULT, "DFFRX1 out_data_reg_2_( .D (N132),  .CK (clk),  .RN (n33775),  .Q (out_data[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5038
+MATRIX_MULT, "DFFRX1 out_data_reg_1_( .D (N131),  .CK (clk),  .RN (n33775),  .Q (out_data[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5039
+MATRIX_MULT, "DFFRX1 out_data_reg_0_( .D (N130),  .CK (clk),  .RN (n33775),  .Q (out_data[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5237
+MATRIX_MULT, "DFFX1 mat_c_reg_4__1__0_( .D (n33790),  .CK (clk),  .QN (mat_c[600]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5238
+MATRIX_MULT, "DFFX1 mat_c_reg_5__7__6_( .D (n33785),  .CK (clk),  .QN (mat_c[326]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5239
+MATRIX_MULT, "DFFX4 mat_c_reg_5__1__4_( .D (n33786),  .CK (clk),  .QN (mat_c[444]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5242
+MATRIX_MULT, "DFFTRX1 mat_c_reg_6__3__0_( .D (1'b1),  .RN (n2169),  .CK (clk),  .Q (mat_c[240]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5244
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_6__7__3_( .D (1'b1),  .RN (n3735),  .CK (clk),  .Q (matrix_A_6__7__3_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5631
+MATRIX_MULT, "DFFTRX1 mat_c_reg_2__7__0_( .D (1'b1),  .RN (n2735),  .CK (clk),  .Q (mat_c[800]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5633
+MATRIX_MULT, "DFFTRX1 mat_c_reg_3__7__0_( .D (1'b1),  .RN (n2573),  .CK (clk),  .Q (mat_c[640]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5635
+MATRIX_MULT, "DFFTRX1 mat_c_reg_5__7__0_( .D (1'b1),  .RN (n2250),  .CK (clk),  .Q (mat_c[320]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5818
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__7_( .D (1'b1),  .RN (n3731),  .CK (clk),  .Q (matrix_A_7__7__7_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5820
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__6_( .D (1'b1),  .RN (n3730),  .CK (clk),  .Q (matrix_A_7__7__6_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5822
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__5_( .D (1'b1),  .RN (n3729),  .CK (clk),  .Q (matrix_A_7__7__5_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5824
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__4_( .D (1'b1),  .RN (n3728),  .CK (clk),  .Q (matrix_A_7__7__4_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5826
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__3_( .D (1'b1),  .RN (n3727),  .CK (clk),  .Q (matrix_A_7__7__3_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5828
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__2_( .D (1'b1),  .RN (n3726),  .CK (clk),  .Q (matrix_A_7__7__2_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5830
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__1_( .D (1'b1),  .RN (n3725),  .CK (clk),  .Q (matrix_A_7__7__1_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5832
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_7__7__0_( .D (1'b1),  .RN (n3724),  .CK (clk),  .Q (matrix_A_7__7__0_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5834
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__7_( .D (1'b1),  .RN (n3779),  .CK (clk),  .Q (matrix_A_1__7__7_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5836
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__6_( .D (1'b1),  .RN (n3778),  .CK (clk),  .Q (matrix_A_1__7__6_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5838
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__5_( .D (1'b1),  .RN (n3777),  .CK (clk),  .Q (matrix_A_1__7__5_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5840
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__4_( .D (1'b1),  .RN (n3776),  .CK (clk),  .Q (matrix_A_1__7__4_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5842
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__3_( .D (1'b1),  .RN (n3775),  .CK (clk),  .Q (matrix_A_1__7__3_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5844
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__2_( .D (1'b1),  .RN (n3774),  .CK (clk),  .Q (matrix_A_1__7__2_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5846
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__1_( .D (1'b1),  .RN (n3773),  .CK (clk),  .Q (matrix_A_1__7__1_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5848
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_1__7__0_( .D (1'b1),  .RN (n3772),  .CK (clk),  .Q (matrix_A_1__7__0_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5850
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_6__7__7_( .D (1'b1),  .RN (n3739),  .CK (clk),  .Q (matrix_A_6__7__7_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5852
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_6__7__6_( .D (1'b1),  .RN (n3738),  .CK (clk),  .Q (matrix_A_6__7__6_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5854
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_6__7__5_( .D (1'b1),  .RN (n3737),  .CK (clk),  .Q (matrix_A_6__7__5_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5856
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_6__7__4_( .D (1'b1),  .RN (n3736),  .CK (clk),  .Q (matrix_A_6__7__4_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 5858
+MATRIX_MULT, "DFFTRX1 matrix_A_reg_6__7__2_( .D (1'b1),  .RN (n3734),  .CK (clk),  .Q (matrix_A_6__7__2_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 7453
+MATRIX_MULT, "ADDHX1 U5205( .A (mat_c[187]),  .B (n20811),  .S (n4104));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 9660
+MATRIX_MULT, "ADDFHX2 U7173( .A (n28620),  .B (n28619),  .CI (n28618),  .S (n4073));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 12284
+MATRIX_MULT, "ADDFHX2 U9514( .A (n18351),  .B (n18350),  .CI (n18349),  .S (n4618));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+MATRIX_MULT_SYN.v, 22373
+MATRIX_MULT, "ADDFHX2 U18666( .A (n30458),  .B (n30457),  .CI (n30456),  .S (n8382));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+   ***   $sdf_annotate() version 1.2R
+   ***    SDF file: "MATRIX_MULT_SYN.sdf"
+   ***    Annotation scope: TESTBED.u_MATRIX_MULT
+   ***    No MTM selection argument specified
+   ***    No SCALE FACTORS argument specified
+   ***    No SCALE TYPE argument specified
+   ***    MTM selection defaulted to "TOOL_CONTROL":
+               (+typdelays compiled, TYPICAL delays selected)
+   ***    SCALE FACTORS defaulted to "1.0:1.0:1.0":
+   ***    SCALE TYPE defaulted to: "FROM_MTM"
+   ***    Turnoff delay: "FROM_FILE"
+   ***    Approximation (mipd) policy: "MAXIMUM"
+
+   ***    SDF annotation begin: Fri May 15 00:21:47 2026
+
+
+SDF Info: +pulse_r/100, +pulse_e/100 in effect
+
+          Total errors: 0
+          Total warnings: 0
+   ***    SDF annotation completed: Fri May 15 00:21:48 2026
+
+
+Starting vcs inline pass...
+
+Note-[VCS_PARAL] Parallel code-gen enabled
+  VCS is running with parallel code generation(-j)...
+
+154 modules and 2 UDPs read.
+recompiling module PATTERN
+	However, due to incremental compilation, only 1 module needs to be compiled. 
+make[1]: Entering directory `/home/VLSILAB45/Lab3/03_GATE/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _46260_archive_1.so _46292_archive_1.so \
+_prev_archive_1.so _cuarc0.so objs/udps/uYEPC.o objs/udps/exIG1.o  SIM_l.o      rmapats_mop.o \
+rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf \
+-lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/home/VLSILAB45/Lab3/03_GATE/csrc'
+Command: /home/VLSILAB45/Lab3/03_GATE/./simv +v2k -a vcs.log +define+GATE +neg_tchk
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  May 15 00:21 2026
+Doing SDF annotation ...... Done
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'MATRIX_MULT_SYN.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+[32m        PATTERN           1 Passed!         [0m
+[32m        PATTERN           2 Passed!         [0m
+[32m        PATTERN           3 Passed!         [0m
+[32m        PATTERN           4 Passed!         [0m
+[32m        PATTERN           5 Passed!         [0m
+[32m        PATTERN           6 Passed!         [0m
+[32m        PATTERN           7 Passed!         [0m
+[32m        PATTERN           8 Passed!         [0m
+[32m        PATTERN           9 Passed!         [0m
+[32m        PATTERN          10 Passed!         [0m
+[32m        PATTERN          11 Passed!         [0m
+[32m        PATTERN          12 Passed!         [0m
+[32m        PATTERN          13 Passed!         [0m
+[32m        PATTERN          14 Passed!         [0m
+[32m        PATTERN          15 Passed!         [0m
+[32m        PATTERN          16 Passed!         [0m
+[32m        PATTERN          17 Passed!         [0m
+[32m        PATTERN          18 Passed!         [0m
+[32m        PATTERN          19 Passed!         [0m
+[32m        PATTERN          20 Passed!         [0m
+[32m        PATTERN          21 Passed!         [0m
+[32m        PATTERN          22 Passed!         [0m
+[32m        PATTERN          23 Passed!         [0m
+[32m        PATTERN          24 Passed!         [0m
+[32m        PATTERN          25 Passed!         [0m
+[32m        PATTERN          26 Passed!         [0m
+[32m        PATTERN          27 Passed!         [0m
+[32m        PATTERN          28 Passed!         [0m
+[32m        PATTERN          29 Passed!         [0m
+[32m        PATTERN          30 Passed!         [0m
+[32m        PATTERN          31 Passed!         [0m
+[32m        PATTERN          32 Passed!         [0m
+[32m        PATTERN          33 Passed!         [0m
+[32m        PATTERN          34 Passed!         [0m
+[32m        PATTERN          35 Passed!         [0m
+[32m        PATTERN          36 Passed!         [0m
+[32m        PATTERN          37 Passed!         [0m
+[32m        PATTERN          38 Passed!         [0m
+[32m        PATTERN          39 Passed!         [0m
+[32m        PATTERN          40 Passed!         [0m
+[32m        PATTERN          41 Passed!         [0m
+[32m        PATTERN          42 Passed!         [0m
+[32m        PATTERN          43 Passed!         [0m
+[32m        PATTERN          44 Passed!         [0m
+[32m        PATTERN          45 Passed!         [0m
+[32m        PATTERN          46 Passed!         [0m
+[32m        PATTERN          47 Passed!         [0m
+[32m        PATTERN          48 Passed!         [0m
+[32m        PATTERN          49 Passed!         [0m
+[32m        PATTERN          50 Passed!         [0m
+[32m        PATTERN          51 Passed!         [0m
+[32m        PATTERN          52 Passed!         [0m
+[32m        PATTERN          53 Passed!         [0m
+[32m        PATTERN          54 Passed!         [0m
+[32m        PATTERN          55 Passed!         [0m
+[32m        PATTERN          56 Passed!         [0m
+[32m        PATTERN          57 Passed!         [0m
+[32m        PATTERN          58 Passed!         [0m
+[32m        PATTERN          59 Passed!         [0m
+[32m        PATTERN          60 Passed!         [0m
+[32m        PATTERN          61 Passed!         [0m
+[32m        PATTERN          62 Passed!         [0m
+[32m        PATTERN          63 Passed!         [0m
+[32m        PATTERN          64 Passed!         [0m
+[32m        PATTERN          65 Passed!         [0m
+[32m        PATTERN          66 Passed!         [0m
+[32m        PATTERN          67 Passed!         [0m
+[32m        PATTERN          68 Passed!         [0m
+[32m        PATTERN          69 Passed!         [0m
+[32m        PATTERN          70 Passed!         [0m
+[32m        PATTERN          71 Passed!         [0m
+[32m        PATTERN          72 Passed!         [0m
+[32m        PATTERN          73 Passed!         [0m
+[32m        PATTERN          74 Passed!         [0m
+[32m        PATTERN          75 Passed!         [0m
+[32m        PATTERN          76 Passed!         [0m
+[32m        PATTERN          77 Passed!         [0m
+[32m        PATTERN          78 Passed!         [0m
+[32m        PATTERN          79 Passed!         [0m
+[32m        PATTERN          80 Passed!         [0m
+[32m        PATTERN          81 Passed!         [0m
+[32m        PATTERN          82 Passed!         [0m
+[32m        PATTERN          83 Passed!         [0m
+[32m        PATTERN          84 Passed!         [0m
+[32m        PATTERN          85 Passed!         [0m
+[32m        PATTERN          86 Passed!         [0m
+[32m        PATTERN          87 Passed!         [0m
+[32m        PATTERN          88 Passed!         [0m
+[32m        PATTERN          89 Passed!         [0m
+[32m        PATTERN          90 Passed!         [0m
+[32m        PATTERN          91 Passed!         [0m
+[32m        PATTERN          92 Passed!         [0m
+[32m        PATTERN          93 Passed!         [0m
+[32m        PATTERN          94 Passed!         [0m
+[32m        PATTERN          95 Passed!         [0m
+[32m        PATTERN          96 Passed!         [0m
+[32m        PATTERN          97 Passed!         [0m
+[32m        PATTERN          98 Passed!         [0m
+[32m        PATTERN          99 Passed!         [0m
+[32m        PATTERN         100 Passed!         [0m
+*************************************************************************
+*                Congratulations!                                       *
+*                Your execution cycles =   100 cycles                   *
+*                Your clock period = 5.0 ns                            *
+*************************************************************************
+==========================================================================================
+$finish called from file "PATTERN.v", line 198.
+$finish at simulation time             42906380
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 42906380 ps
+CPU Time:     32.950 seconds;       Data structure size:   6.6Mb
+Fri May 15 00:22:15 2026
+CPU time: 4.622 seconds to compile + 1.256 seconds to elab + .984 seconds to link + 33.021 seconds in simulation

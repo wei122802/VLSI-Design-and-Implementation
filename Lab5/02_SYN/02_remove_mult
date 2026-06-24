@@ -1,0 +1,1 @@
+dc_shell -f remove_mult.tcl -output_log_file remove_mult.log

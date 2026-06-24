@@ -1,0 +1,137 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : DART
+Version: U-2022.12
+Date   : Fri Apr 24 02:41:45 2026
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: points[3] (input port clocked by clk)
+  Endpoint: u_p1_score/score_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.50       1.50 f
+  points[3] (in)                           0.00       1.50 f
+  U188/Y (NAND2X6)                         0.14       1.64 r
+  U339/Y (XOR2X4)                          0.12       1.76 f
+  U257/Y (NAND3X2)                         0.08       1.84 r
+  U355/Y (OAI2BB1X4)                       0.11       1.95 f
+  U296/Y (BUFX4)                           0.14       2.09 f
+  U330/Y (AOI21X4)                         0.10       2.19 r
+  U282/Y (NAND3X4)                         0.09       2.28 f
+  U180/Y (NOR2X4)                          0.09       2.37 r
+  U327/Y (AOI21X4)                         0.10       2.47 f
+  U433/Y (NOR3X2)                          0.10       2.57 r
+  U278/Y (XOR2X2)                          0.16       2.73 f
+  U318/Y (NAND2X2)                         0.06       2.78 r
+  u_p1_score/score_reg[2]/D (DFFSX2)       0.00       2.78 r
+  data arrival time                                   2.78
+
+  clock clk (rise edge)                    3.00       3.00
+  clock network delay (ideal)              0.00       3.00
+  clock uncertainty                       -0.10       2.90
+  u_p1_score/score_reg[2]/CK (DFFSX2)      0.00       2.90 r
+  library setup time                      -0.11       2.79
+  data required time                                  2.79
+  -----------------------------------------------------------
+  data required time                                  2.79
+  data arrival time                                  -2.78
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: is_triple (input port clocked by clk)
+  Endpoint: u_p1_score/score_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.50       1.50 f
+  is_triple (in)                           0.00       1.50 f
+  U176/Y (INVX16)                          0.08       1.58 r
+  U352/Y (XOR2X4)                          0.15       1.73 r
+  U238/Y (INVX3)                           0.09       1.82 f
+  U167/Y (NOR2X4)                          0.11       1.93 r
+  U334/Y (NOR2X8)                          0.07       2.00 f
+  U306/Y (NAND2X6)                         0.09       2.09 r
+  U262/Y (NAND2X6)                         0.07       2.17 f
+  U153/Y (NOR2X6)                          0.08       2.25 r
+  U180/Y (NOR2X4)                          0.06       2.31 f
+  U327/Y (AOI21X4)                         0.16       2.47 r
+  U316/Y (INVX3)                           0.06       2.53 f
+  U295/Y (NAND3BX2)                        0.09       2.61 r
+  U254/Y (XOR2X4)                          0.12       2.73 f
+  U336/Y (NAND2X2)                         0.05       2.78 r
+  u_p1_score/score_reg[5]/D (DFFSX2)       0.00       2.78 r
+  data arrival time                                   2.78
+
+  clock clk (rise edge)                    3.00       3.00
+  clock network delay (ideal)              0.00       3.00
+  clock uncertainty                       -0.10       2.90
+  u_p1_score/score_reg[5]/CK (DFFSX2)      0.00       2.90 r
+  library setup time                      -0.11       2.79
+  data required time                                  2.79
+  -----------------------------------------------------------
+  data required time                                  2.79
+  data arrival time                                  -2.78
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: points[3] (input port clocked by clk)
+  Endpoint: u_p1_score/score_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.50       1.50 f
+  points[3] (in)                           0.00       1.50 f
+  U188/Y (NAND2X6)                         0.14       1.64 r
+  U339/Y (XOR2X4)                          0.12       1.76 f
+  U257/Y (NAND3X2)                         0.08       1.84 r
+  U355/Y (OAI2BB1X4)                       0.11       1.95 f
+  U296/Y (BUFX4)                           0.14       2.09 f
+  U330/Y (AOI21X4)                         0.10       2.19 r
+  U282/Y (NAND3X4)                         0.09       2.28 f
+  U180/Y (NOR2X4)                          0.09       2.37 r
+  U327/Y (AOI21X4)                         0.10       2.47 f
+  U372/Y (NOR3X2)                          0.10       2.57 r
+  U141/Y (XOR2X2)                          0.15       2.72 f
+  U373/Y (NAND2X2)                         0.06       2.78 r
+  u_p1_score/score_reg[3]/D (DFFSX2)       0.00       2.78 r
+  data arrival time                                   2.78
+
+  clock clk (rise edge)                    3.00       3.00
+  clock network delay (ideal)              0.00       3.00
+  clock uncertainty                       -0.10       2.90
+  u_p1_score/score_reg[3]/CK (DFFSX2)      0.00       2.90 r
+  library setup time                      -0.11       2.79
+  data required time                                  2.79
+  -----------------------------------------------------------
+  data required time                                  2.79
+  data arrival time                                  -2.78
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : FIFO
+Version: U-2022.12
+Date   : Tue May 19 04:09:31 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+Number of ports:                           38
+Number of nets:                          1035
+Number of cells:                          997
+Number of combinational cells:            463
+Number of sequential cells:               529
+Number of macros/black boxes:               0
+Number of buf/inv:                         54
+Number of references:                      19
+
+Combinational area:               4423.424295
+Buf/Inv area:                      346.269595
+Noncombinational area:            9264.409664
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 13687.833960
+Total area:                 undefined
+1

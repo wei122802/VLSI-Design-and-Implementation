@@ -1,0 +1,141 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : FIFO
+Version: U-2022.12
+Date   : Tue May 19 04:09:31 2026
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: w_data[2] (input port clocked by clk)
+  Endpoint: sram_row[6].cell_q_reg[2]
+            (positive level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    6.00       6.00 f
+  w_data[2] (in)                                          0.00       6.00 f
+  U170/Y (CLKBUFX3)                                       0.35       6.35 f
+  sram_row[6].cell_q_reg[2]/D (TLATX1)                    0.00       6.35 f
+  data arrival time                                                  6.35
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.10      -0.10
+  sram_row[6].cell_q_reg[2]/G (TLATX1)                    0.00      -0.10 r
+  time borrowed from endpoint                             6.45       6.35
+  data required time                                                 6.35
+  --------------------------------------------------------------------------
+  data required time                                                 6.35
+  data arrival time                                                 -6.35
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                                10.00   
+  library setup time                                     -0.14   
+  --------------------------------------------------------------
+  max time borrow                                         9.86   
+  --------------------------------------------------------------
+  actual time borrow                                      6.45   
+  clock uncertainty                                      -0.10   
+  --------------------------------------------------------------
+  time given to startpoint                                6.35   
+  --------------------------------------------------------------
+
+
+  Startpoint: w_data[1] (input port clocked by clk)
+  Endpoint: sram_row[6].cell_q_reg[1]
+            (positive level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    6.00       6.00 f
+  w_data[1] (in)                                          0.00       6.00 f
+  U169/Y (CLKBUFX3)                                       0.35       6.35 f
+  sram_row[6].cell_q_reg[1]/D (TLATX1)                    0.00       6.35 f
+  data arrival time                                                  6.35
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.10      -0.10
+  sram_row[6].cell_q_reg[1]/G (TLATX1)                    0.00      -0.10 r
+  time borrowed from endpoint                             6.45       6.35
+  data required time                                                 6.35
+  --------------------------------------------------------------------------
+  data required time                                                 6.35
+  data arrival time                                                 -6.35
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                                10.00   
+  library setup time                                     -0.14   
+  --------------------------------------------------------------
+  max time borrow                                         9.86   
+  --------------------------------------------------------------
+  actual time borrow                                      6.45   
+  clock uncertainty                                      -0.10   
+  --------------------------------------------------------------
+  time given to startpoint                                6.35   
+  --------------------------------------------------------------
+
+
+  Startpoint: w_data[0] (input port clocked by clk)
+  Endpoint: sram_row[6].cell_q_reg[0]
+            (positive level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    6.00       6.00 f
+  w_data[0] (in)                                          0.00       6.00 f
+  U168/Y (CLKBUFX3)                                       0.35       6.35 f
+  sram_row[6].cell_q_reg[0]/D (TLATX1)                    0.00       6.35 f
+  data arrival time                                                  6.35
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.10      -0.10
+  sram_row[6].cell_q_reg[0]/G (TLATX1)                    0.00      -0.10 r
+  time borrowed from endpoint                             6.45       6.35
+  data required time                                                 6.35
+  --------------------------------------------------------------------------
+  data required time                                                 6.35
+  data arrival time                                                 -6.35
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                                10.00   
+  library setup time                                     -0.14   
+  --------------------------------------------------------------
+  max time borrow                                         9.86   
+  --------------------------------------------------------------
+  actual time borrow                                      6.45   
+  clock uncertainty                                      -0.10   
+  --------------------------------------------------------------
+  time given to startpoint                                6.35   
+  --------------------------------------------------------------
+
+
+1

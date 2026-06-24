@@ -1,0 +1,117 @@
+0 
+45
++define+RTL
++itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
++libext+.v
++notimingchecks
++v2k
++vcsd1
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/usr/cad/synopsys/vcs/2022.06/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/pli.a -ldl
+-Mupdate
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/2022.06/include
+-Mxllcflags=
+-P
+-Xcmopt=0x2
+-Xvcs_run_simv=1
+-debug_access+all
+-f filelist.f
+-fsdb
+-full64
+-gen_obj
+-l
+-o simv
+-picarchive
+-sverilog
+-timescale=1ns/1fs
+-y
+/usr/cad/synopsys/vcs/2022.06/linux64/bin/vcs1
+vcs.log
+simv
+/usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/verdi.tab
+/usr/cad/synopsys/synthesis/cur/dw/sim_ver/
+filelist.f
+48
+XDG_SESSION_ID=33364
+XDG_RUNTIME_DIR=/run/user/1078
+VMR_MODE_FLAG=64
+VERDI_HOME=/usr/cad/synopsys/verdi/2022.06/
+VENDOR=unknown
+VCS_STATIC_HOME=/usr/cad/synopsys/vcs/2022.06/vcfca
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=vcs.log
+VCS_HOME=/usr/cad/synopsys/vcs/2022.06
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_CC=gcc
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+UNAME=/bin/uname
+TOOL_HOME=/usr/cad/synopsys/vcs/2022.06/linux64
+SYN_MAN_DIR=/usr/cad/synopsys/synthesis/2022.12/doc/syn/man
+SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
+SSH_TTY=/dev/pts/7
+SSH_CONNECTION=140.113.217.114 57329 192.168.1.210 22
+SSH_CLIENT=140.113.217.114 57329 22
+SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06/linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SHLIB_PATH=/usr/cad/synopsys/verdi/2022.06//etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2022.06//share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/:
+SELINUX_USE_CURRENT_RANGE=
+SELINUX_ROLE_REQUESTED=
+SELINUX_LEVEL_REQUESTED=
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+REMOTEHOST=140.113.217.114
+QT_GRAPHICSSYSTEM_CHECKED=1
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+POWERVIEW_64=1
+OVA_UUM=0
+OSTYPE=linux
+MFLAGS=
+MAKELEVEL=1
+MAKEFLAGS=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+HOSTTYPE=x86_64-linux
+GROUP=VLSILAB45
+FINEWAVE_64=1
+FINESIM_64=1
+0
+1
+0 /usr/cad/synopsys/synthesis/cur/dw/sim_ver/
+7
+1781458566 AMED.v
+1780159431 MULT_err_SIM.vp
+1781457940 PATTERN.v
+1781457940 ../00_TESTBED/PATTERN.v
+1780143351 TESTBED.v
+1780143351 ../00_TESTBED/TESTBED.v
+1780038000 filelist.f
+1780038000 ../00_TESTBED/filelist.f
+1653825972 /usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/verdi.tab
+1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
+4
+1654054205 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvirsim.so
+1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
+1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
+1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
+1781596362 simv.daidir
+-1 partitionlib

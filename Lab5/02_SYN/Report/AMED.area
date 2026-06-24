@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:11 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+Number of ports:                          424
+Number of nets:                          2859
+Number of cells:                         2416
+Number of combinational cells:           2057
+Number of sequential cells:               326
+Number of macros/black boxes:               0
+Number of buf/inv:                        233
+Number of references:                      53
+
+Combinational area:              23386.777348
+Buf/Inv area:                     1052.387997
+Noncombinational area:            9264.409088
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 32651.186436
+Total area:                 undefined
+1

@@ -1,0 +1,170 @@
+`ifdef RTL
+    `define CYCLE_TIME 2.9
+`endif
+`ifdef GATE
+    `define CYCLE_TIME 2.9
+`endif
+
+module PATTERN(
+    output reg clk,
+    output reg rst_n,
+    output reg in_valid,
+    output reg player,
+    output reg is_double,
+    output reg is_triple,
+    output reg [4:0] points,
+    input wire out_valid,
+    input wire out_winner
+);
+
+//===========================================
+// Clock Generation
+//===========================================
+real CYCLE = `CYCLE_TIME;
+always	#(CYCLE/2.0) clk = ~clk;
+
+//===========================================
+// integer & reg declaration
+//===========================================
+integer i, j, k;
+integer PATNUM = 500;
+integer pat_cnt;
+integer local_latency;
+integer total_latency = 0;
+integer input_file, output_file;
+
+reg golden_winner;
+
+//===========================================
+// Initial Block for Test Pattern Generation
+//===========================================
+initial begin
+    // Open input and output files
+    input_file = $fopen("../00_TESTBED/input.txt", "r");
+    output_file = $fopen("../00_TESTBED/output.txt", "r");
+    
+    if (input_file == 0) begin
+        $display("\033[31mFailed to open input.txt\033[0m");
+        $finish;
+    end
+    if (output_file == 0) begin
+        $display("\033[31mFailed to open output.txt\033[0m");
+        $finish;
+    end
+
+    // Reset the DUT
+    reset_task();
+
+    // Run through all patterns
+    for (pat_cnt = 1; pat_cnt <= PATNUM; pat_cnt = pat_cnt + 1) begin
+        local_latency = 0;
+        input_data_task();
+        wait_out_task();
+        check_ans_task();
+        total_latency = total_latency + local_latency;
+        repeat($urandom_range(2, 5)) @(negedge clk);
+    end
+
+    pass_task();
+end
+
+
+//================================================================
+//  TASK
+//================================================================
+task reset_task; begin
+	rst_n = 1'b1;
+	in_valid = 1'b0;
+    player = 'bx;
+    is_double = 'bx;
+    is_triple = 'bx;
+    points = 'bx;
+	force clk = 1'b0;
+	#(0.5);
+	rst_n = 1'b0;
+	#(100); // CHECK: All output signals should be reset after the reset signal is asserted. 
+	if (out_valid !== 1'b0 || out_winner !== 1'b0) begin
+		$display("\033[31mRESET FAIL \033[0m");
+        $display(" out_valid = %b, out_winner = %h", out_valid, out_winner);
+		$display("==========================================================================================");
+        #(100);
+		$finish;
+	end
+	rst_n = 1'b1;
+	#(30);
+	release clk;
+end endtask
+
+task input_data_task; begin
+    @(negedge clk);
+    in_valid = 1'b1;
+    for (i = 0; i < 20; i = i + 1) begin
+        k = $fscanf(input_file, "%d %d %d %d", player, points, is_double, is_triple);
+        @(negedge clk);
+    end
+    in_valid = 1'b0;
+    player = 'bx;
+    is_double = 'bx;
+    is_triple = 'bx;
+    points = 'bx;
+end endtask
+
+
+task wait_out_task; begin
+    while (out_valid !== 1'b1) begin
+        if (local_latency > 1000) begin
+            $display("\033[31m        PATTERN %d Failed > 1000 cycles latency!         \033[0m", pat_cnt);
+            $display("==========================================================================================");
+            #(100);
+            $finish;
+        end
+        local_latency = local_latency + 1;
+        @(negedge clk);
+    end
+end endtask
+
+task check_ans_task; begin
+    k = $fscanf(output_file, "%b", golden_winner);
+    if (out_winner !== golden_winner) begin
+        $display("\033[31m        PATTERN %d Failed!         \033[0m", pat_cnt);
+        $display("out_winner = %h, golden_winner = %h", out_winner, golden_winner);
+        $display("==========================================================================================");
+        #(100);
+        $finish;
+    end else begin
+        $display("\033[32m        PATTERN %d Passed!         \033[0m", pat_cnt);
+    end
+end endtask
+
+task pass_task; begin
+    $display("*************************************************************************");
+    $display("*                Congratulations!                                       *");
+    $display("*                Your execution cycles = %5d cycles                   *", total_latency);
+    $display("*                Your clock period = %.1f ns                            *", CYCLE);
+    $display("*************************************************************************");
+	$display("==========================================================================================");
+    $finish;
+end endtask
+
+always @(negedge clk) begin
+	if(out_valid === 1'b0 && rst_n === 1'b1) begin
+		if(out_winner !== 0) begin
+			$display("\033[31m \033[5m out_valid == 1'b0         out_winner !==0 \033[0m");
+			$display("==========================================================================================");
+			$finish;
+		end
+	end
+end
+
+always @(*) begin
+	if(out_valid === 1'b1) begin
+		if(in_valid === 1'b1) begin
+			$display("\033[31m \033[5m  out_valid == 1'b1      in_valid == 1'b1  \033[0m");
+			$display("==========================================================================================");
+			$finish;
+		end
+	end
+end
+
+
+endmodule

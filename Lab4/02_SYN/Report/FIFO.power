@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : FIFO
+Version: U-2022.12
+Date   : Tue May 19 04:09:32 2026
+****************************************
+
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =  31.6810 uW   (77%)
+  Net Switching Power  =   9.2064 uW   (23%)
+                         ---------
+Total Dynamic Power    =  40.8874 uW  (100%)
+
+Cell Leakage Power     =  12.5939 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  2.2316e-02        1.2811e-03        8.3276e+04        2.3680e-02  (  44.28%)  i
+register       5.3591e-03        5.8402e-04        9.7952e+06        1.5738e-02  (  29.43%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  4.0059e-03        7.3413e-03        2.7154e+06        1.4063e-02  (  26.29%)
+--------------------------------------------------------------------------------------------------
+Total          3.1681e-02 mW     9.2064e-03 mW     1.2594e+07 pW     5.3481e-02 mW
+1

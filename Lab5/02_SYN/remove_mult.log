@@ -1,0 +1,41 @@
+set DESIGN "AMED"
+AMED
+read_ddc $DESIGN\_SYN.ddc
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/standard.sldb'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/gtech.db'
+  Loading link library 'slow'
+  Loading link library 'gtech'
+Reading ddc file '/home/VLSILAB45/Lab5/02_SYN/AMED_SYN.ddc'.
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Loaded 2 designs.
+Current design is 'AMED'.
+AMED MULT_err
+current_design $DESIGN
+Current design is 'AMED'.
+{AMED}
+remove_design MULT_err
+Removing design 'MULT_err'
+1
+set verilogout_higher_designs_first true
+true
+write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
+Writing verilog file '/home/VLSILAB45/Lab5/02_SYN/Netlist/AMED_SYN.v'.
+1
+# write -format ddc     -hierarchy -output $DESIGN\_SYN.ddc
+write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
+Information: Writing timing information to file '/home/VLSILAB45/Lab5/02_SYN/Netlist/AMED_SYN.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Warning: Design contains black-box components.  These cells will have no timing information. (WT-7)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+exit
+Memory usage for this session 140 Mbytes.
+Memory usage for this session including child processes 140 Mbytes.
+CPU usage for this session 3 seconds ( 0.00 hours ).
+Elapsed time for this session 6 seconds ( 0.00 hours ).
+
+Thank you...
+

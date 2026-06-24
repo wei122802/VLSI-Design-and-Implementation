@@ -1,0 +1,158 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "PATTERN": [
+        "PATTERN",
+        "ThTta",
+        "module",
+        2
+    ],
+    "FIFO": [
+        "FIFO",
+        "J3vD4",
+        "module",
+        3
+    ],
+    "TESTBED": [
+        "TESTBED",
+        "TAUdR",
+        "module",
+        4
+    ],
+    "AND2X2": [
+        "AND2X2",
+        "deaHL",
+        "module",
+        18
+    ],
+    "AND3X2": [
+        "AND3X2",
+        "W6YVY",
+        "module",
+        32
+    ],
+    "AND4X1": [
+        "AND4X1",
+        "cWr9t",
+        "module",
+        17
+    ],
+    "AOI221XL": [
+        "AOI221XL",
+        "BUsfE",
+        "module",
+        8
+    ],
+    "AO22X1": [
+        "AO22X1",
+        "UiFyw",
+        "module",
+        9
+    ],
+    "NAND2X1": [
+        "NAND2X1",
+        "zeaQT",
+        "module",
+        10
+    ],
+    "NAND3X1": [
+        "NAND3X1",
+        "n5kPb",
+        "module",
+        11
+    ],
+    "NAND4X1": [
+        "NAND4X1",
+        "Yz42M",
+        "module",
+        12
+    ],
+    "NOR2X1": [
+        "NOR2X1",
+        "esUc7",
+        "module",
+        13
+    ],
+    "NOR3BXL": [
+        "NOR3BXL",
+        "yEYNK",
+        "module",
+        14
+    ],
+    "OAI2BB2XL": [
+        "OAI2BB2XL",
+        "eKshN",
+        "module",
+        15
+    ],
+    "XOR2X1": [
+        "XOR2X1",
+        "Whn5t",
+        "module",
+        16
+    ],
+    "XNOR2X1": [
+        "XNOR2X1",
+        "nGFzt",
+        "module",
+        7
+    ],
+    "CLKBUFX3": [
+        "CLKBUFX3",
+        "qJHNj",
+        "module",
+        6
+    ],
+    "CLKINVX1": [
+        "CLKINVX1",
+        "FeYIE",
+        "module",
+        19
+    ],
+    "ADDHXL": [
+        "ADDHXL",
+        "xAVMd",
+        "module",
+        20
+    ],
+    "DFFRX1": [
+        "DFFRX1",
+        "a5kPP",
+        "module",
+        21
+    ],
+    "DFFNSRXL": [
+        "DFFNSRXL",
+        "guc0t",
+        "module",
+        22
+    ],
+    "TLATX1": [
+        "TLATX1",
+        "xfmxY",
+        "module",
+        23
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        24
+    ],
+    "udp_dff": [
+        "udp_dff",
+        "exIG1",
+        "udp",
+        25
+    ],
+    "udp_tlat": [
+        "udp_tlat",
+        "gSqMj",
+        "udp",
+        26
+    ]
+}

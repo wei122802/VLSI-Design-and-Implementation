@@ -1,0 +1,77 @@
+ 
+****************************************
+Report : reference
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:11 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+ADDFXL             slow          33.948002       2     67.896004  r
+AND2X1             slow           6.789600       9     61.106399  
+AND2X2             slow           6.789600       7     47.527199  
+AO22X1             slow          10.184400       9     91.659596  
+AOI21X1            slow           8.487000       2     16.974001  
+AOI21XL            slow           8.487000       4     33.948002  
+AOI211X1           slow           8.487000       1      8.487000  
+AOI211XL           slow           8.487000      32    271.584015  
+BUFX2              slow           6.789600       2     13.579200  
+BUFX4              slow           8.487000       1      8.487000  
+BUFX8              slow          13.579200       1     13.579200  
+CLKAND2X3          slow           8.487000       1      8.487000  
+CLKBUFX3           slow           6.789600       2     13.579200  
+CLKINVX1           slow           3.394800       9     30.553200  
+CLKINVX2           slow           5.092200       2     10.184400  
+DFFNSRX1           slow          37.342800      31   1157.626804  n
+DFFNSRX2           slow          40.737598       1     40.737598  n
+DFFRX1             slow          32.250599       2     64.501198  n
+DFFRX2             slow          37.342800       2     74.685600  n
+DFFSX2             slow          35.645401       1     35.645401  n
+DFFX1              slow          27.158400     284   7712.985481  n
+EDFFXL             slow          35.645401       5    178.227005  n
+INVX1              slow           3.394800      10     33.947999  
+INVX3              slow           5.092200      10     50.921998  
+INVX4              slow           6.789600       1      6.789600  
+INVX6              slow           8.487000       3     25.461001  
+INVXL              slow           3.394800      22     74.685599  
+MULT_err                       8906.257871       2  17812.515741  d, h
+NAND2BX1           slow           6.789600       1      6.789600  
+NAND2BX2           slow          10.184400       1     10.184400  
+NAND2BX4           slow          15.276600       1     15.276600  
+NAND2X1            slow           5.092200       6     30.553199  
+NAND2X2            slow           8.487000       2     16.974001  
+NAND2XL            slow           5.092200      29    147.673794  
+NAND3X2            slow          11.881800       1     11.881800  
+NAND4X2            slow          13.579200       1     13.579200  
+NOR2BX1            slow           6.789600      28    190.108797  
+NOR2X1             slow           5.092200     167    850.397367  
+NOR2X2             slow           8.487000       1      8.487000  
+NOR2XL             slow           5.092200      15     76.382997  
+OA21X4             slow          13.579200       1     13.579200  
+OA22X1             slow          10.184400      72    733.276772  
+OAI2BB1X1          slow           8.487000       1      8.487000  
+OAI2BB2XL          slow          10.184400      35    356.453986  
+OAI21X1            slow           8.487000       1      8.487000  
+OAI21X2            slow          13.579200       4     54.316799  
+OAI21X4            slow          18.671400       1     18.671400  
+OAI21XL            slow           6.789600      42    285.163196  
+OAI22XL            slow           8.487000     192   1629.504089  
+OAI31XL            slow           8.487000       1      8.487000  
+OAI221XL           slow          11.881800       2     23.763599  
+XNOR2X1            slow          11.881800       7     83.172598  
+XOR2X1             slow          11.881800       7     83.172598  
+-----------------------------------------------------------------------------
+Total 53 references                                 32651.186436
+1

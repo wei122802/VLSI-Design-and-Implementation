@@ -1,0 +1,52 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Tue Jun 16 03:53:00 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Unconnected ports (LINT-28)                                     2
+
+Nets                                                               33
+    Unloaded nets (LINT-2)                                         33
+--------------------------------------------------------------------------------
+
+Warning: In design 'AMED', net 'mult2_out[16]' driven by pin 'u_mult2/out[16]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[17]' driven by pin 'u_mult2/out[17]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[18]' driven by pin 'u_mult2/out[18]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[19]' driven by pin 'u_mult2/out[19]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[20]' driven by pin 'u_mult2/out[20]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[21]' driven by pin 'u_mult2/out[21]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[22]' driven by pin 'u_mult2/out[22]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[23]' driven by pin 'u_mult2/out[23]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[24]' driven by pin 'u_mult2/out[24]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[25]' driven by pin 'u_mult2/out[25]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[26]' driven by pin 'u_mult2/out[26]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[27]' driven by pin 'u_mult2/out[27]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[28]' driven by pin 'u_mult2/out[28]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[29]' driven by pin 'u_mult2/out[29]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[30]' driven by pin 'u_mult2/out[30]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult2_out[31]' driven by pin 'u_mult2/out[31]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'net2190' driven by pin 'C1106/Z' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[16]' driven by pin 'u_mult1/out[16]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[17]' driven by pin 'u_mult1/out[17]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[18]' driven by pin 'u_mult1/out[18]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[19]' driven by pin 'u_mult1/out[19]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[20]' driven by pin 'u_mult1/out[20]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[21]' driven by pin 'u_mult1/out[21]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[22]' driven by pin 'u_mult1/out[22]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[23]' driven by pin 'u_mult1/out[23]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[24]' driven by pin 'u_mult1/out[24]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[25]' driven by pin 'u_mult1/out[25]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[26]' driven by pin 'u_mult1/out[26]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[27]' driven by pin 'u_mult1/out[27]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[28]' driven by pin 'u_mult1/out[28]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[29]' driven by pin 'u_mult1/out[29]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[30]' driven by pin 'u_mult1/out[30]' has no loads. (LINT-2)
+Warning: In design 'AMED', net 'mult1_out[31]' driven by pin 'u_mult1/out[31]' has no loads. (LINT-2)
+Warning: In design 'MULT_err', port 'clk' is not connected to any nets. (LINT-28)
+Warning: In design 'MULT_err', port 'rst_n' is not connected to any nets. (LINT-28)
+1

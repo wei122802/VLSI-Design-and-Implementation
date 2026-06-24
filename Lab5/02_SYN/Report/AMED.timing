@@ -1,0 +1,161 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:11 2026
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: cnt_reg[2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: shadow1_reg[15]
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  cnt_reg[2]/CK (DFFRX2)                   0.00       0.00 r
+  cnt_reg[2]/Q (DFFRX2)                    0.58       0.58 f
+  U922/Y (NOR2X1)                          0.18       0.76 r
+  U745/Y (NAND2XL)                         0.13       0.89 f
+  U923/Y (NOR2X1)                          0.17       1.05 r
+  U924/Y (INVX3)                           0.13       1.18 f
+  U780/Y (OAI2BB1X1)                       0.20       1.38 r
+  U858/Y (AOI211XL)                        0.15       1.53 f
+  U766/Y (OA21X4)                          0.19       1.72 f
+  U741/Y (INVX4)                           0.29       2.01 r
+  u_mult1/a[11] (MULT_err)                 0.00       2.01 r
+  u_mult1/U268/Y (XNOR2X4)                 0.35       2.36 r
+  u_mult1/U269/Y (NAND2X6)                 0.15       2.51 f
+  u_mult1/U297/Y (OAI22X1)                 0.11       2.62 r
+  u_mult1/U300/S (ADDHXL)                  0.33       2.96 r
+  u_mult1/mult_x_1/U404/CO (CMPR42X2)      0.52       3.47 r
+  u_mult1/mult_x_1/U400/S (CMPR42X2)       0.55       4.02 f
+  u_mult1/U141/Y (NOR2X1)                  0.15       4.18 r
+  u_mult1/U236/Y (OAI21X1)                 0.11       4.29 f
+  u_mult1/U237/Y (AOI21X2)                 0.13       4.41 r
+  u_mult1/U463/Y (INVX3)                   0.07       4.49 f
+  u_mult1/U604/Y (XNOR2X1)                 0.10       4.59 r
+  u_mult1/out[15] (MULT_err)               0.00       4.59 r
+  U753/Y (INVX1)                           0.06       4.64 f
+  shadow1_reg[15]/D (DFFNSRX2)             0.00       4.64 f
+  data arrival time                                   4.64
+
+  clock clk (fall edge)                    4.90       4.90
+  clock network delay (ideal)              0.00       4.90
+  clock uncertainty                       -0.10       4.80
+  shadow1_reg[15]/CKN (DFFNSRX2)           0.00       4.80 f
+  library setup time                      -0.15       4.65
+  data required time                                  4.65
+  -----------------------------------------------------------
+  data required time                                  4.65
+  data arrival time                                  -4.64
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: cnt_reg[2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: shadow2_reg[15]
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  cnt_reg[2]/CK (DFFRX2)                   0.00       0.00 r
+  cnt_reg[2]/Q (DFFRX2)                    0.58       0.58 f
+  U922/Y (NOR2X1)                          0.18       0.76 r
+  U745/Y (NAND2XL)                         0.13       0.89 f
+  U927/Y (NAND2BX1)                        0.24       1.12 f
+  U781/Y (NAND2X1)                         0.20       1.33 r
+  U1246/Y (AOI211XL)                       0.16       1.49 f
+  U779/Y (OAI21X2)                         0.36       1.85 r
+  u_mult2/a[3] (MULT_err)                  0.00       1.85 r
+  u_mult2/U182/Y (XOR2X1)                  0.39       2.24 r
+  u_mult2/U185/Y (NAND2X4)                 0.18       2.41 f
+  u_mult2/U518/Y (OAI22X1)                 0.17       2.59 r
+  u_mult2/mult_x_1/U408/CO (CMPR42X1)      0.79       3.37 f
+  u_mult2/mult_x_1/U403/S (CMPR42X1)       0.59       3.96 f
+  u_mult2/U177/Y (NOR2X1)                  0.15       4.11 r
+  u_mult2/U178/Y (NOR2X1)                  0.11       4.22 f
+  u_mult2/U237/Y (AOI21X2)                 0.14       4.36 r
+  u_mult2/U463/Y (INVX3)                   0.07       4.43 f
+  u_mult2/U604/Y (XNOR2X1)                 0.14       4.57 f
+  u_mult2/out[15] (MULT_err)               0.00       4.57 f
+  shadow2_reg[15]/D (DFFNSRX1)             0.00       4.57 f
+  data arrival time                                   4.57
+
+  clock clk (fall edge)                    4.90       4.90
+  clock network delay (ideal)              0.00       4.90
+  clock uncertainty                       -0.10       4.80
+  shadow2_reg[15]/CKN (DFFNSRX1)           0.00       4.80 f
+  library setup time                      -0.21       4.59
+  data required time                                  4.59
+  -----------------------------------------------------------
+  data required time                                  4.59
+  data arrival time                                  -4.57
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: cnt_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: shadow2_reg[14]
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  cnt_reg[0]/CK (DFFRX1)                   0.00       0.00 r
+  cnt_reg[0]/Q (DFFRX1)                    0.56       0.56 f
+  U744/Y (NOR2XL)                          0.15       0.70 r
+  U784/Y (NAND2X1)                         0.18       0.89 f
+  U925/Y (NOR2X1)                          0.20       1.08 r
+  U944/Y (NOR2BX1)                         0.15       1.23 f
+  U970/Y (OAI21XL)                         0.71       1.94 r
+  u_mult2/b[1] (MULT_err)                  0.00       1.94 r
+  u_mult2/U192/Y (XNOR2X1)                 0.36       2.30 f
+  u_mult2/U135/Y (OAI22XL)                 0.29       2.59 r
+  u_mult2/U312/S (ADDHXL)                  0.32       2.91 r
+  u_mult2/U88/S (ADDFX1)                   0.40       3.30 r
+  u_mult2/U218/Y (NAND2X1)                 0.08       3.39 f
+  u_mult2/U219/Y (INVX1)                   0.09       3.47 r
+  u_mult2/U220/Y (AOI21X2)                 0.08       3.55 f
+  u_mult2/U221/Y (OAI21X4)                 0.13       3.68 r
+  u_mult2/U98/Y (AOI21X2)                  0.09       3.77 f
+  u_mult2/U227/Y (OAI21X2)                 0.15       3.92 r
+  u_mult2/U96/Y (AOI21X2)                  0.11       4.02 f
+  u_mult2/U233/Y (OAI21X2)                 0.14       4.16 r
+  u_mult2/U546/Y (CLKINVX1)                0.10       4.26 f
+  u_mult2/U556/Y (OAI21X1)                 0.13       4.39 r
+  u_mult2/U147/Y (XNOR2X1)                 0.17       4.56 f
+  u_mult2/out[14] (MULT_err)               0.00       4.56 f
+  shadow2_reg[14]/D (DFFNSRX1)             0.00       4.56 f
+  data arrival time                                   4.56
+
+  clock clk (fall edge)                    4.90       4.90
+  clock network delay (ideal)              0.00       4.90
+  clock uncertainty                       -0.10       4.80
+  shadow2_reg[14]/CKN (DFFNSRX1)           0.00       4.80 f
+  library setup time                      -0.21       4.59
+  data required time                                  4.59
+  -----------------------------------------------------------
+  data required time                                  4.59
+  data arrival time                                  -4.56
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+1

@@ -1,0 +1,2183 @@
+Command: vcs -timescale=1ns/1fs -j4 -sverilog +v2k -full64 -Mupdate -R -debug_access+all \
+-f filelist.f -o simv -l vcs.log -v /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v \
++define+GATE +neg_tchk
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Tue Jun 16 03:53:34 2026
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file 'TESTBED.v'
+Parsing included file 'PATTERN.v'.
+Back to file 'TESTBED.v'.
+Parsing included file 'MULT_err_SIM.vp'.
+Back to file 'TESTBED.v'.
+Parsing included file 'AMED_SYN.v'.
+Back to file 'TESTBED.v'.
+Parsing library file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v'
+Top Level Modules:
+       TESTBED
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 139
+AMED, "DFFNSRX1 shadow2_reg_15_( .D (mult2_out[15]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[15]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 140
+AMED, "DFFNSRX1 shadow2_reg_0_( .D (mult2_out[0]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 142
+AMED, "DFFNSRX1 shadow1_reg_0_( .D (mult1_out[0]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 144
+AMED, "DFFNSRX1 shadow1_reg_1_( .D (mult1_out[1]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 146
+AMED, "DFFNSRX1 shadow2_reg_1_( .D (mult2_out[1]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 148
+AMED, "DFFNSRX1 shadow1_reg_2_( .D (mult1_out[2]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 150
+AMED, "DFFNSRX1 shadow2_reg_2_( .D (mult2_out[2]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 152
+AMED, "DFFNSRX1 shadow1_reg_3_( .D (mult1_out[3]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 154
+AMED, "DFFNSRX1 shadow2_reg_3_( .D (mult2_out[3]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 156
+AMED, "DFFNSRX1 shadow1_reg_4_( .D (mult1_out[4]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[4]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 158
+AMED, "DFFNSRX1 shadow2_reg_4_( .D (mult2_out[4]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[4]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 160
+AMED, "DFFNSRX1 shadow1_reg_5_( .D (mult1_out[5]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 162
+AMED, "DFFNSRX1 shadow2_reg_5_( .D (mult2_out[5]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 164
+AMED, "DFFNSRX1 shadow1_reg_6_( .D (mult1_out[6]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[6]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 166
+AMED, "DFFNSRX1 shadow2_reg_6_( .D (mult2_out[6]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[6]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 168
+AMED, "DFFNSRX1 shadow2_reg_7_( .D (mult2_out[7]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[7]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 170
+AMED, "DFFNSRX1 shadow1_reg_7_( .D (mult1_out[7]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[7]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 172
+AMED, "DFFNSRX1 shadow2_reg_8_( .D (mult2_out[8]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[8]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 174
+AMED, "DFFNSRX1 shadow1_reg_8_( .D (mult1_out[8]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[8]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 176
+AMED, "DFFNSRX1 shadow2_reg_10_( .D (mult2_out[10]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[10]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 177
+AMED, "DFFNSRX1 shadow1_reg_10_( .D (mult1_out[10]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[10]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 178
+AMED, "DFFNSRX1 shadow2_reg_9_( .D (mult2_out[9]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[9]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 180
+AMED, "DFFNSRX1 shadow1_reg_9_( .D (mult1_out[9]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[9]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 182
+AMED, "DFFNSRX1 shadow2_reg_11_( .D (mult2_out[11]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[11]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 183
+AMED, "DFFNSRX1 shadow1_reg_11_( .D (mult1_out[11]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[11]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 184
+AMED, "DFFNSRX1 shadow2_reg_13_( .D (mult2_out[13]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[13]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 185
+AMED, "DFFNSRX1 shadow1_reg_13_( .D (mult1_out[13]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[13]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 186
+AMED, "DFFNSRX1 shadow2_reg_12_( .D (mult2_out[12]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[12]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 187
+AMED, "DFFNSRX1 shadow1_reg_12_( .D (mult1_out[12]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow1[12]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 188
+AMED, "DFFNSRX1 shadow2_reg_14_( .D (mult2_out[14]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (shadow2[14]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 191
+AMED, "EDFFXL shift_buffer_reg_173_( .D (shift_buffer[149]),  .E (n496),  .CK (clk),  .Q (shift_buffer[173]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 193
+AMED, "EDFFXL shift_buffer_reg_6_( .D (sub_result[6]),  .E (n510),  .CK (clk),  .QN (n972));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 194
+AMED, "EDFFXL shift_buffer_reg_4_( .D (sub_result[4]),  .E (n510),  .CK (clk),  .QN (n986));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 195
+AMED, "EDFFXL shift_buffer_reg_2_( .D (sub_result[2]),  .E (n510),  .CK (clk),  .QN (n1000));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 197
+AMED, "EDFFXL shift_buffer_reg_0_( .D (sub_result[0]),  .E (n510),  .CK (clk),  .QN (n1014));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 199
+AMED, "DFFX1 shift_buffer_reg_126_( .D (n356),  .CK (clk),  .QN (n977));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 200
+AMED, "DFFX1 shift_buffer_reg_150_( .D (n355),  .CK (clk),  .QN (n978));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 201
+AMED, "DFFX1 shift_buffer_reg_25_( .D (n320),  .CK (clk),  .QN (n1008));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 202
+AMED, "DFFX1 shift_buffer_reg_26_( .D (n328),  .CK (clk),  .QN (n1001));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 203
+AMED, "DFFX1 shift_buffer_reg_27_( .D (n336),  .CK (clk),  .QN (n994));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 204
+AMED, "DFFX1 shift_buffer_reg_28_( .D (n344),  .CK (clk),  .QN (n987));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 205
+AMED, "DFFX1 shift_buffer_reg_29_( .D (n352),  .CK (clk),  .QN (n980));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 206
+AMED, "DFFX1 shift_buffer_reg_31_( .D (n368),  .CK (clk),  .QN (n966));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 207
+AMED, "DFFX1 shift_buffer_reg_32_( .D (n376),  .CK (clk),  .QN (n959));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 208
+AMED, "DFFX1 shift_buffer_reg_33_( .D (n384),  .CK (clk),  .QN (n952));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 209
+AMED, "DFFX1 shift_buffer_reg_34_( .D (n392),  .CK (clk),  .QN (n945));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 210
+AMED, "DFFX1 shift_buffer_reg_35_( .D (n400),  .CK (clk),  .QN (n938));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 211
+AMED, "DFFX1 shift_buffer_reg_36_( .D (n408),  .CK (clk),  .QN (n931));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 212
+AMED, "DFFX1 shift_buffer_reg_37_( .D (n416),  .CK (clk),  .QN (n924));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 213
+AMED, "DFFX1 shift_buffer_reg_39_( .D (n432),  .CK (clk),  .QN (n910));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 214
+AMED, "DFFX1 shift_buffer_reg_51_( .D (n335),  .CK (clk),  .QN (n995));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 215
+AMED, "DFFX1 shift_buffer_reg_52_( .D (n343),  .CK (clk),  .QN (n988));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 216
+AMED, "DFFX1 shift_buffer_reg_53_( .D (n351),  .CK (clk),  .QN (n981));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 217
+AMED, "DFFX1 shift_buffer_reg_54_( .D (n359),  .CK (clk),  .QN (n974));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 218
+AMED, "DFFX1 shift_buffer_reg_55_( .D (n367),  .CK (clk),  .QN (n967));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 219
+AMED, "DFFX1 shift_buffer_reg_56_( .D (n375),  .CK (clk),  .QN (n960));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 220
+AMED, "DFFX1 shift_buffer_reg_57_( .D (n383),  .CK (clk),  .QN (n953));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 221
+AMED, "DFFX1 shift_buffer_reg_58_( .D (n391),  .CK (clk),  .QN (n946));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 222
+AMED, "DFFX1 shift_buffer_reg_59_( .D (n399),  .CK (clk),  .QN (n939));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 223
+AMED, "DFFX1 shift_buffer_reg_60_( .D (n407),  .CK (clk),  .QN (n932));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 224
+AMED, "DFFX1 shift_buffer_reg_62_( .D (n423),  .CK (clk),  .QN (n918));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 225
+AMED, "DFFX1 shift_buffer_reg_75_( .D (n334),  .CK (clk),  .QN (n996));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 226
+AMED, "DFFX1 shift_buffer_reg_76_( .D (n342),  .CK (clk),  .QN (n989));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 227
+AMED, "DFFX1 shift_buffer_reg_77_( .D (n350),  .CK (clk),  .QN (n982));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 228
+AMED, "DFFX1 shift_buffer_reg_78_( .D (n358),  .CK (clk),  .QN (n975));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 229
+AMED, "DFFX1 shift_buffer_reg_79_( .D (n366),  .CK (clk),  .QN (n968));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 230
+AMED, "DFFX1 shift_buffer_reg_80_( .D (n374),  .CK (clk),  .QN (n961));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 231
+AMED, "DFFX1 shift_buffer_reg_81_( .D (n382),  .CK (clk),  .QN (n954));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 232
+AMED, "DFFX1 shift_buffer_reg_82_( .D (n390),  .CK (clk),  .QN (n947));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 233
+AMED, "DFFX1 shift_buffer_reg_83_( .D (n398),  .CK (clk),  .QN (n940));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 234
+AMED, "DFFX1 shift_buffer_reg_84_( .D (n406),  .CK (clk),  .QN (n933));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 235
+AMED, "DFFX1 shift_buffer_reg_87_( .D (n430),  .CK (clk),  .QN (n912));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 236
+AMED, "DFFX1 shift_buffer_reg_99_( .D (n333),  .CK (clk),  .QN (n997));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 237
+AMED, "DFFX1 shift_buffer_reg_100_( .D (n341),  .CK (clk),  .QN (n990));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 238
+AMED, "DFFX1 shift_buffer_reg_103_( .D (n365),  .CK (clk),  .QN (n969));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 239
+AMED, "DFFX1 shift_buffer_reg_104_( .D (n373),  .CK (clk),  .QN (n962));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 240
+AMED, "DFFX1 shift_buffer_reg_105_( .D (n381),  .CK (clk),  .QN (n955));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 241
+AMED, "DFFX1 shift_buffer_reg_106_( .D (n389),  .CK (clk),  .QN (n948));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 242
+AMED, "DFFX1 shift_buffer_reg_107_( .D (n397),  .CK (clk),  .QN (n941));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 243
+AMED, "DFFX1 shift_buffer_reg_108_( .D (n405),  .CK (clk),  .QN (n934));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 244
+AMED, "DFFX1 shift_buffer_reg_110_( .D (n421),  .CK (clk),  .QN (n920));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 245
+AMED, "DFFX1 shift_buffer_reg_111_( .D (n429),  .CK (clk),  .QN (n913));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 246
+AMED, "DFFX1 shift_buffer_reg_122_( .D (n324),  .CK (clk),  .QN (n1005));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 247
+AMED, "DFFX1 shift_buffer_reg_123_( .D (n332),  .CK (clk),  .QN (n998));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 248
+AMED, "DFFX1 shift_buffer_reg_124_( .D (n340),  .CK (clk),  .QN (n991));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 249
+AMED, "DFFX1 shift_buffer_reg_127_( .D (n364),  .CK (clk),  .QN (n970));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 250
+AMED, "DFFX1 shift_buffer_reg_128_( .D (n372),  .CK (clk),  .QN (n963));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 251
+AMED, "DFFX1 shift_buffer_reg_129_( .D (n380),  .CK (clk),  .QN (n956));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 252
+AMED, "DFFX1 shift_buffer_reg_130_( .D (n388),  .CK (clk),  .QN (n949));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 253
+AMED, "DFFX1 shift_buffer_reg_131_( .D (n396),  .CK (clk),  .QN (n942));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 254
+AMED, "DFFX1 shift_buffer_reg_132_( .D (n404),  .CK (clk),  .QN (n935));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 255
+AMED, "DFFX1 shift_buffer_reg_133_( .D (n412),  .CK (clk),  .QN (n928));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 256
+AMED, "DFFX1 shift_buffer_reg_144_( .D (n307),  .CK (clk),  .QN (n1020));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 257
+AMED, "DFFX1 shift_buffer_reg_146_( .D (n323),  .CK (clk),  .QN (n1006));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 258
+AMED, "DFFX1 shift_buffer_reg_147_( .D (n331),  .CK (clk),  .QN (n999));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 259
+AMED, "DFFX1 shift_buffer_reg_148_( .D (n339),  .CK (clk),  .QN (n992));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 262
+AMED, "DFFX1 shift_buffer_reg_151_( .D (n363),  .CK (clk),  .QN (n971));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 263
+AMED, "DFFX1 shift_buffer_reg_152_( .D (n371),  .CK (clk),  .QN (n964));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 264
+AMED, "DFFX1 shift_buffer_reg_153_( .D (n379),  .CK (clk),  .QN (n957));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 265
+AMED, "DFFX1 shift_buffer_reg_154_( .D (n387),  .CK (clk),  .QN (n950));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 266
+AMED, "DFFX1 shift_buffer_reg_155_( .D (n395),  .CK (clk),  .QN (n943));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 267
+AMED, "DFFX1 shift_buffer_reg_156_( .D (n403),  .CK (clk),  .QN (n936));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 268
+AMED, "DFFX1 shift_buffer_reg_159_( .D (n427),  .CK (clk),  .QN (n915));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 269
+AMED, "DFFX1 shift_buffer_reg_38_( .D (n424),  .CK (clk),  .QN (n917));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 270
+AMED, "DFFX1 shift_buffer_reg_50_( .D (n327),  .CK (clk),  .QN (n1002));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 271
+AMED, "DFFX1 shift_buffer_reg_61_( .D (n415),  .CK (clk),  .QN (n925));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 272
+AMED, "DFFX1 shift_buffer_reg_63_( .D (n431),  .CK (clk),  .QN (n911));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 273
+AMED, "DFFX1 shift_buffer_reg_74_( .D (n326),  .CK (clk),  .QN (n1003));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 274
+AMED, "DFFX1 shift_buffer_reg_85_( .D (n414),  .CK (clk),  .QN (n926));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 275
+AMED, "DFFX1 shift_buffer_reg_86_( .D (n422),  .CK (clk),  .QN (n919));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 276
+AMED, "DFFX1 shift_buffer_reg_98_( .D (n325),  .CK (clk),  .QN (n1004));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 277
+AMED, "DFFX1 shift_buffer_reg_109_( .D (n413),  .CK (clk),  .QN (n927));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 278
+AMED, "DFFX1 shift_buffer_reg_134_( .D (n420),  .CK (clk),  .QN (n921));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 279
+AMED, "DFFX1 shift_buffer_reg_135_( .D (n428),  .CK (clk),  .QN (n914));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 280
+AMED, "DFFX1 shift_buffer_reg_157_( .D (n411),  .CK (clk),  .QN (n929));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 281
+AMED, "DFFX1 shift_buffer_reg_158_( .D (n419),  .CK (clk),  .QN (n922));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 282
+AMED, "DFFX1 shift_buffer_reg_13_( .D (n417),  .CK (clk),  .QN (n923));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 283
+AMED, "DFFX1 shift_buffer_reg_190_( .D (n441),  .CK (clk),  .Q (shift_buffer[190]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 284
+AMED, "DFFX1 shift_buffer_reg_184_( .D (n483),  .CK (clk),  .Q (shift_buffer[184]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 285
+AMED, "DFFX1 shift_buffer_reg_185_( .D (n476),  .CK (clk),  .Q (shift_buffer[185]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 286
+AMED, "DFFX1 shift_buffer_reg_186_( .D (n469),  .CK (clk),  .Q (shift_buffer[186]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 287
+AMED, "DFFX1 shift_buffer_reg_187_( .D (n462),  .CK (clk),  .Q (shift_buffer[187]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 288
+AMED, "DFFX1 shift_buffer_reg_188_( .D (n455),  .CK (clk),  .Q (shift_buffer[188]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 289
+AMED, "DFFX1 shift_buffer_reg_189_( .D (n448),  .CK (clk),  .Q (shift_buffer[189]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 290
+AMED, "DFFX1 shift_buffer_reg_191_( .D (n434),  .CK (clk),  .Q (shift_buffer[191]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 291
+AMED, "DFFX1 shift_buffer_reg_168_( .D (n306),  .CK (clk),  .Q (shift_buffer[168]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 292
+AMED, "DFFX1 shift_buffer_reg_170_( .D (n322),  .CK (clk),  .Q (shift_buffer[170]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 293
+AMED, "DFFX1 shift_buffer_reg_172_( .D (n338),  .CK (clk),  .Q (shift_buffer[172]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 294
+AMED, "DFFX1 shift_buffer_reg_174_( .D (n354),  .CK (clk),  .Q (shift_buffer[174]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 295
+AMED, "DFFX1 shift_buffer_reg_176_( .D (n370),  .CK (clk),  .Q (shift_buffer[176]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 296
+AMED, "DFFX1 shift_buffer_reg_177_( .D (n378),  .CK (clk),  .Q (shift_buffer[177]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 297
+AMED, "DFFX1 shift_buffer_reg_178_( .D (n386),  .CK (clk),  .Q (shift_buffer[178]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 298
+AMED, "DFFX1 shift_buffer_reg_180_( .D (n402),  .CK (clk),  .Q (shift_buffer[180]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 299
+AMED, "DFFX1 shift_buffer_reg_181_( .D (n410),  .CK (clk),  .Q (shift_buffer[181]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 300
+AMED, "DFFX1 shift_buffer_reg_183_( .D (n426),  .CK (clk),  .Q (shift_buffer[183]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 301
+AMED, "DFFX1 shift_buffer_reg_12_( .D (n409),  .CK (clk),  .QN (n930));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 302
+AMED, "DFFX1 shift_buffer_reg_24_( .D (n312),  .CK (clk),  .QN (n1015));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 303
+AMED, "DFFX1 shift_buffer_reg_72_( .D (n310),  .CK (clk),  .QN (n1017));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 304
+AMED, "DFFX1 shift_buffer_reg_73_( .D (n318),  .CK (clk),  .QN (n1010));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 305
+AMED, "DFFX1 shift_buffer_reg_96_( .D (n309),  .CK (clk),  .QN (n1018));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 306
+AMED, "DFFX1 shift_buffer_reg_121_( .D (n316),  .CK (clk),  .QN (n1012));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 307
+AMED, "DFFX1 shift_buffer_reg_48_( .D (n311),  .CK (clk),  .QN (n1016));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 308
+AMED, "DFFX1 shift_buffer_reg_49_( .D (n319),  .CK (clk),  .QN (n1009));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 309
+AMED, "DFFX1 shift_buffer_reg_97_( .D (n317),  .CK (clk),  .QN (n1011));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 310
+AMED, "DFFX1 shift_buffer_reg_145_( .D (n315),  .CK (clk),  .QN (n1013));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 311
+AMED, "DFFX1 shift_buffer_reg_1_( .D (n321),  .CK (clk),  .QN (n1007));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 312
+AMED, "DFFX1 shift_buffer_reg_3_( .D (n337),  .CK (clk),  .QN (n993));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 313
+AMED, "DFFX1 shift_buffer_reg_5_( .D (n353),  .CK (clk),  .QN (n979));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 314
+AMED, "DFFX1 shift_buffer_reg_7_( .D (n369),  .CK (clk),  .QN (n965));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 315
+AMED, "DFFX1 shift_buffer_reg_8_( .D (n377),  .CK (clk),  .QN (n958));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 316
+AMED, "DFFX1 shift_buffer_reg_9_( .D (n385),  .CK (clk),  .QN (n951));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 317
+AMED, "DFFX1 shift_buffer_reg_10_( .D (n393),  .CK (clk),  .QN (n944));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 318
+AMED, "DFFX1 shift_buffer_reg_11_( .D (n401),  .CK (clk),  .QN (n937));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 319
+AMED, "DFFX1 shift_buffer_reg_169_( .D (n314),  .CK (clk),  .Q (shift_buffer[169]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 320
+AMED, "DFFX1 shift_buffer_reg_175_( .D (n362),  .CK (clk),  .Q (shift_buffer[175]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 321
+AMED, "DFFX1 shift_buffer_reg_179_( .D (n394),  .CK (clk),  .Q (shift_buffer[179]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 322
+AMED, "DFFX1 shift_buffer_reg_182_( .D (n418),  .CK (clk),  .Q (shift_buffer[182]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 323
+AMED, "DFFX1 shift_buffer_reg_171_( .D (n330),  .CK (clk),  .Q (shift_buffer[171]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 324
+AMED, "DFFX1 shift_buffer_reg_125_( .D (n348),  .CK (clk),  .QN (n984));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 325
+AMED, "DFFX1 shift_buffer_reg_120_( .D (n308),  .CK (clk),  .QN (n1019));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 326
+AMED, "DFFX1 shift_buffer_reg_102_( .D (n357),  .CK (clk),  .QN (n976));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 327
+AMED, "DFFX1 shift_buffer_reg_101_( .D (n349),  .CK (clk),  .QN (n983));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 328
+AMED, "DFFX1 shift_buffer_reg_30_( .D (n360),  .CK (clk),  .QN (n973));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 329
+AMED, "DFFX1 shift_buffer_reg_117_( .D (n451),  .CK (clk),  .QN (n894));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 330
+AMED, "DFFX1 shift_buffer_reg_71_( .D (n439),  .CK (clk),  .QN (n904));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 331
+AMED, "DFFX1 shift_buffer_reg_119_( .D (n437),  .CK (clk),  .QN (n906));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 338
+AMED, "DFFX1 shift_buffer_reg_138_( .D (n471),  .CK (clk),  .QN (n878));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 339
+AMED, "DFFX1 shift_buffer_reg_95_( .D (n438),  .CK (clk),  .QN (n905));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 340
+AMED, "DFFX1 shift_buffer_reg_92_( .D (n459),  .CK (clk),  .QN (n887));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 341
+AMED, "DFFX1 shift_buffer_reg_90_( .D (n473),  .CK (clk),  .QN (n875));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 342
+AMED, "DFFX1 shift_buffer_reg_68_( .D (n460),  .CK (clk),  .QN (n886));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 351
+AMED, "DFFX1 shift_buffer_reg_141_( .D (n450),  .CK (clk),  .QN (n896));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 352
+AMED, "DFFX1 shift_buffer_reg_140_( .D (n457),  .CK (clk),  .QN (n890));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 353
+AMED, "DFFX1 shift_buffer_reg_139_( .D (n464),  .CK (clk),  .QN (n884));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 354
+AMED, "DFFX1 shift_buffer_reg_137_( .D (n478),  .CK (clk),  .QN (n872));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 355
+AMED, "DFFX1 shift_buffer_reg_136_( .D (n485),  .CK (clk),  .QN (n866));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 356
+AMED, "DFFX1 shift_buffer_reg_118_( .D (n444),  .CK (clk),  .QN (n900));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 357
+AMED, "DFFX1 shift_buffer_reg_116_( .D (n458),  .CK (clk),  .QN (n888));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 358
+AMED, "DFFX1 shift_buffer_reg_115_( .D (n465),  .CK (clk),  .QN (n882));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 359
+AMED, "DFFX1 shift_buffer_reg_114_( .D (n472),  .CK (clk),  .QN (n876));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 360
+AMED, "DFFX1 shift_buffer_reg_113_( .D (n479),  .CK (clk),  .QN (n870));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 361
+AMED, "DFFX1 shift_buffer_reg_112_( .D (n486),  .CK (clk),  .QN (n864));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 362
+AMED, "DFFX1 shift_buffer_reg_91_( .D (n466),  .CK (clk),  .QN (n881));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 363
+AMED, "DFFX1 shift_buffer_reg_89_( .D (n480),  .CK (clk),  .QN (n869));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 364
+AMED, "DFFX1 shift_buffer_reg_88_( .D (n487),  .CK (clk),  .QN (n863));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 365
+AMED, "DFFX1 shift_buffer_reg_69_( .D (n453),  .CK (clk),  .QN (n892));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 366
+AMED, "DFFX1 shift_buffer_reg_67_( .D (n467),  .CK (clk),  .QN (n880));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 367
+AMED, "DFFX1 shift_buffer_reg_66_( .D (n474),  .CK (clk),  .QN (n874));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 368
+AMED, "DFFX1 shift_buffer_reg_65_( .D (n481),  .CK (clk),  .QN (n868));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 369
+AMED, "DFFX1 shift_buffer_reg_64_( .D (n488),  .CK (clk),  .QN (n862));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 372
+AMED, "DFFX1 shift_buffer_reg_143_( .D (n436),  .CK (clk),  .QN (n908));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 373
+AMED, "DFFX1 shift_buffer_reg_142_( .D (n443),  .CK (clk),  .QN (n902));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 374
+AMED, "DFFX1 shift_buffer_reg_94_( .D (n445),  .CK (clk),  .QN (n899));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 375
+AMED, "DFFX1 shift_buffer_reg_93_( .D (n452),  .CK (clk),  .QN (n893));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 376
+AMED, "DFFX1 shift_buffer_reg_70_( .D (n446),  .CK (clk),  .QN (n898));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 377
+AMED, "DFFX1 shift_buffer_reg_47_( .D (n440),  .CK (clk),  .QN (n903));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 378
+AMED, "DFFX1 shift_buffer_reg_46_( .D (n447),  .CK (clk),  .QN (n897));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 379
+AMED, "DFFX1 shift_buffer_reg_45_( .D (n454),  .CK (clk),  .QN (n891));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 380
+AMED, "DFFX1 shift_buffer_reg_44_( .D (n461),  .CK (clk),  .QN (n885));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 381
+AMED, "DFFX1 shift_buffer_reg_43_( .D (n468),  .CK (clk),  .QN (n879));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 382
+AMED, "DFFX1 shift_buffer_reg_42_( .D (n475),  .CK (clk),  .QN (n873));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 383
+AMED, "DFFX1 shift_buffer_reg_41_( .D (n482),  .CK (clk),  .QN (n867));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 384
+AMED, "DFFX1 shift_buffer_reg_40_( .D (n489),  .CK (clk),  .QN (n861));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 385
+AMED, "DFFX1 shift_buffer_reg_14_( .D (n425),  .CK (clk),  .QN (n916));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 386
+AMED, "DFFX1 shift_buffer_reg_15_( .D (n433),  .CK (clk),  .QN (n909));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 387
+AMED, "DFFX1 shift_buffer_reg_16_( .D (n490),  .CK (clk),  .Q (shift_buffer[16]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 388
+AMED, "DFFX1 shadow2_sync_reg_15_( .D (shadow2[15]),  .CK (clk),  .Q (shadow2_sync_15_));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 390
+AMED, "DFFX1 shadow1_sync_reg_15_( .D (shadow1[15]),  .CK (clk),  .QN (sub_x_17_n96));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 391
+AMED, "DFFX1 shadow1_sync_reg_14_( .D (shadow1[14]),  .CK (clk),  .Q (shadow1_sync[14]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 393
+AMED, "DFFX1 shadow2_sync_reg_14_( .D (shadow2[14]),  .CK (clk),  .QN (sub_x_17_n81));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 394
+AMED, "DFFX1 shadow2_sync_reg_13_( .D (shadow2[13]),  .CK (clk),  .QN (sub_x_17_n82));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 395
+AMED, "DFFX1 shadow2_sync_reg_12_( .D (shadow2[12]),  .CK (clk),  .QN (sub_x_17_n83));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 396
+AMED, "DFFX1 shadow2_sync_reg_11_( .D (shadow2[11]),  .CK (clk),  .QN (sub_x_17_n84));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 397
+AMED, "DFFX1 shadow2_sync_reg_10_( .D (shadow2[10]),  .CK (clk),  .QN (sub_x_17_n85));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 398
+AMED, "DFFX1 shadow2_sync_reg_9_( .D (shadow2[9]),  .CK (clk),  .QN (sub_x_17_n86));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 399
+AMED, "DFFX1 shadow2_sync_reg_8_( .D (shadow2[8]),  .CK (clk),  .QN (sub_x_17_n87));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 400
+AMED, "DFFX1 shadow2_sync_reg_7_( .D (shadow2[7]),  .CK (clk),  .QN (sub_x_17_n88));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 401
+AMED, "DFFX1 shadow2_sync_reg_6_( .D (shadow2[6]),  .CK (clk),  .QN (sub_x_17_n89));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 402
+AMED, "DFFX1 shadow2_sync_reg_5_( .D (shadow2[5]),  .CK (clk),  .QN (sub_x_17_n90));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 403
+AMED, "DFFX1 shadow2_sync_reg_4_( .D (shadow2[4]),  .CK (clk),  .QN (sub_x_17_n91));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 404
+AMED, "DFFX1 shadow2_sync_reg_3_( .D (shadow2[3]),  .CK (clk),  .QN (sub_x_17_n92));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 405
+AMED, "DFFX1 shadow2_sync_reg_2_( .D (shadow2[2]),  .CK (clk),  .QN (sub_x_17_n93));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 406
+AMED, "DFFX1 shadow2_sync_reg_1_( .D (shadow2[1]),  .CK (clk),  .QN (sub_x_17_n94));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 407
+AMED, "DFFX1 shadow2_sync_reg_0_( .D (shadow2[0]),  .CK (clk),  .QN (sub_x_17_n95));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 408
+AMED, "DFFX1 shadow1_sync_reg_13_( .D (shadow1[13]),  .CK (clk),  .Q (shadow1_sync[13]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 410
+AMED, "DFFX1 shadow1_sync_reg_12_( .D (shadow1[12]),  .CK (clk),  .Q (shadow1_sync[12]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 412
+AMED, "DFFX1 shadow1_sync_reg_11_( .D (shadow1[11]),  .CK (clk),  .Q (shadow1_sync[11]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 414
+AMED, "DFFX1 shadow1_sync_reg_10_( .D (shadow1[10]),  .CK (clk),  .Q (shadow1_sync[10]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 416
+AMED, "DFFX1 shadow1_sync_reg_9_( .D (shadow1[9]),  .CK (clk),  .Q (shadow1_sync[9]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 417
+AMED, "DFFX1 shadow1_sync_reg_8_( .D (shadow1[8]),  .CK (clk),  .Q (shadow1_sync[8]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 418
+AMED, "DFFX1 shadow1_sync_reg_7_( .D (shadow1[7]),  .CK (clk),  .Q (shadow1_sync[7]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 419
+AMED, "DFFX1 shadow1_sync_reg_6_( .D (shadow1[6]),  .CK (clk),  .Q (shadow1_sync[6]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 420
+AMED, "DFFX1 shadow1_sync_reg_5_( .D (shadow1[5]),  .CK (clk),  .Q (shadow1_sync[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 421
+AMED, "DFFX1 shadow1_sync_reg_4_( .D (shadow1[4]),  .CK (clk),  .Q (shadow1_sync[4]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 422
+AMED, "DFFX1 shadow1_sync_reg_3_( .D (shadow1[3]),  .CK (clk),  .Q (shadow1_sync[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 423
+AMED, "DFFX1 shadow1_sync_reg_2_( .D (shadow1[2]),  .CK (clk),  .Q (shadow1_sync[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 424
+AMED, "DFFX1 shadow1_sync_reg_1_( .D (shadow1[1]),  .CK (clk),  .Q (shadow1_sync[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 425
+AMED, "DFFX1 shadow1_sync_reg_0_( .D (shadow1[0]),  .CK (clk),  .Q (shadow1_sync[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 426
+AMED, "DFFX1 matrix_reg_0__2_( .D (n300),  .CK (clk),  .Q (matrix[66]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 427
+AMED, "DFFX1 matrix_reg_0__7_( .D (n305),  .CK (clk),  .Q (matrix[71]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 428
+AMED, "DFFX1 matrix_reg_0__6_( .D (n304),  .CK (clk),  .Q (matrix[70]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 442
+AMED, "DFFX1 matrix_reg_0__5_( .D (n303),  .CK (clk),  .Q (matrix[69]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 443
+AMED, "DFFX1 matrix_reg_0__4_( .D (n302),  .CK (clk),  .Q (matrix[68]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 444
+AMED, "DFFX1 matrix_reg_0__3_( .D (n301),  .CK (clk),  .Q (matrix[67]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 445
+AMED, "DFFX1 matrix_reg_0__0_( .D (n298),  .CK (clk),  .Q (matrix[64]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 446
+AMED, "DFFX1 matrix_reg_0__1_( .D (n299),  .CK (clk),  .Q (matrix[65]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 498
+AMED, "DFFNSRX1 shadow1_reg_14_( .D (n232),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .QN (shadow1[14]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+AMED_SYN.v, 500
+AMED, "DFFNSRX2 shadow1_reg_15_( .D (n233),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .QN (shadow1[15]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+   ***   $sdf_annotate() version 1.2R
+   ***    SDF file: "AMED_SYN.sdf"
+   ***    Annotation scope: TESTBED.u_AMED
+   ***    No MTM selection argument specified
+   ***    No SCALE FACTORS argument specified
+   ***    No SCALE TYPE argument specified
+   ***    MTM selection defaulted to "TOOL_CONTROL":
+               (+typdelays compiled, TYPICAL delays selected)
+   ***    SCALE FACTORS defaulted to "1.0:1.0:1.0":
+   ***    SCALE TYPE defaulted to: "FROM_MTM"
+   ***    Turnoff delay: "FROM_FILE"
+   ***    Approximation (mipd) policy: "MAXIMUM"
+
+   ***    SDF annotation begin: Tue Jun 16 03:53:35 2026
+
+
+SDF Info: +pulse_r/100, +pulse_e/100 in effect
+
+          Total errors: 0
+          Total warnings: 0
+   ***    SDF annotation completed: Tue Jun 16 03:53:35 2026
+
+
+Starting vcs inline pass...
+
+Note-[VCS_PARAL] Parallel code-gen enabled
+  VCS is running with parallel code generation(-j)...
+
+56 modules and 2 UDPs read.
+	However, due to incremental compilation, no re-compilation is necessary.
+make[1]: Entering directory `/home/VLSILAB45/Lab5/03_GATE/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _42876_archive_1.so _prev_archive_1.so \
+_cuarc0.so objs/udps/exIG1.o objs/udps/Cpxa2.o  SIM_l.o      rmapats_mop.o rmapats.o \
+rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc \
+-lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/home/VLSILAB45/Lab5/03_GATE/csrc'
+Command: /home/VLSILAB45/Lab5/03_GATE/./simv +v2k -a vcs.log +define+GATE +neg_tchk
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Jun 16 03:53 2026
+Doing SDF annotation ...... Done
+[32m        PATTERN           1 Passed!         [0m
+[32m        PATTERN           2 Passed!         [0m
+[32m        PATTERN           3 Passed!         [0m
+[32m        PATTERN           4 Passed!         [0m
+[32m        PATTERN           5 Passed!         [0m
+[32m        PATTERN           6 Passed!         [0m
+[32m        PATTERN           7 Passed!         [0m
+[32m        PATTERN           8 Passed!         [0m
+[32m        PATTERN           9 Passed!         [0m
+[32m        PATTERN          10 Passed!         [0m
+[32m        PATTERN          11 Passed!         [0m
+[32m        PATTERN          12 Passed!         [0m
+[32m        PATTERN          13 Passed!         [0m
+[32m        PATTERN          14 Passed!         [0m
+[32m        PATTERN          15 Passed!         [0m
+[32m        PATTERN          16 Passed!         [0m
+[32m        PATTERN          17 Passed!         [0m
+[32m        PATTERN          18 Passed!         [0m
+[32m        PATTERN          19 Passed!         [0m
+[32m        PATTERN          20 Passed!         [0m
+[32m        PATTERN          21 Passed!         [0m
+[32m        PATTERN          22 Passed!         [0m
+[32m        PATTERN          23 Passed!         [0m
+[32m        PATTERN          24 Passed!         [0m
+[32m        PATTERN          25 Passed!         [0m
+[32m        PATTERN          26 Passed!         [0m
+[32m        PATTERN          27 Passed!         [0m
+[32m        PATTERN          28 Passed!         [0m
+[32m        PATTERN          29 Passed!         [0m
+[32m        PATTERN          30 Passed!         [0m
+[32m        PATTERN          31 Passed!         [0m
+[32m        PATTERN          32 Passed!         [0m
+[32m        PATTERN          33 Passed!         [0m
+[32m        PATTERN          34 Passed!         [0m
+[32m        PATTERN          35 Passed!         [0m
+[32m        PATTERN          36 Passed!         [0m
+[32m        PATTERN          37 Passed!         [0m
+[32m        PATTERN          38 Passed!         [0m
+[32m        PATTERN          39 Passed!         [0m
+[32m        PATTERN          40 Passed!         [0m
+[32m        PATTERN          41 Passed!         [0m
+[32m        PATTERN          42 Passed!         [0m
+[32m        PATTERN          43 Passed!         [0m
+[32m        PATTERN          44 Passed!         [0m
+[32m        PATTERN          45 Passed!         [0m
+[32m        PATTERN          46 Passed!         [0m
+[32m        PATTERN          47 Passed!         [0m
+[32m        PATTERN          48 Passed!         [0m
+[32m        PATTERN          49 Passed!         [0m
+[32m        PATTERN          50 Passed!         [0m
+[32m        PATTERN          51 Passed!         [0m
+[32m        PATTERN          52 Passed!         [0m
+[32m        PATTERN          53 Passed!         [0m
+[32m        PATTERN          54 Passed!         [0m
+[32m        PATTERN          55 Passed!         [0m
+[32m        PATTERN          56 Passed!         [0m
+[32m        PATTERN          57 Passed!         [0m
+[32m        PATTERN          58 Passed!         [0m
+[32m        PATTERN          59 Passed!         [0m
+[32m        PATTERN          60 Passed!         [0m
+[32m        PATTERN          61 Passed!         [0m
+[32m        PATTERN          62 Passed!         [0m
+[32m        PATTERN          63 Passed!         [0m
+[32m        PATTERN          64 Passed!         [0m
+[32m        PATTERN          65 Passed!         [0m
+[32m        PATTERN          66 Passed!         [0m
+[32m        PATTERN          67 Passed!         [0m
+[32m        PATTERN          68 Passed!         [0m
+[32m        PATTERN          69 Passed!         [0m
+[32m        PATTERN          70 Passed!         [0m
+[32m        PATTERN          71 Passed!         [0m
+[32m        PATTERN          72 Passed!         [0m
+[32m        PATTERN          73 Passed!         [0m
+[32m        PATTERN          74 Passed!         [0m
+[32m        PATTERN          75 Passed!         [0m
+[32m        PATTERN          76 Passed!         [0m
+[32m        PATTERN          77 Passed!         [0m
+[32m        PATTERN          78 Passed!         [0m
+[32m        PATTERN          79 Passed!         [0m
+[32m        PATTERN          80 Passed!         [0m
+[32m        PATTERN          81 Passed!         [0m
+[32m        PATTERN          82 Passed!         [0m
+[32m        PATTERN          83 Passed!         [0m
+[32m        PATTERN          84 Passed!         [0m
+[32m        PATTERN          85 Passed!         [0m
+[32m        PATTERN          86 Passed!         [0m
+[32m        PATTERN          87 Passed!         [0m
+[32m        PATTERN          88 Passed!         [0m
+[32m        PATTERN          89 Passed!         [0m
+[32m        PATTERN          90 Passed!         [0m
+[32m        PATTERN          91 Passed!         [0m
+[32m        PATTERN          92 Passed!         [0m
+[32m        PATTERN          93 Passed!         [0m
+[32m        PATTERN          94 Passed!         [0m
+[32m        PATTERN          95 Passed!         [0m
+[32m        PATTERN          96 Passed!         [0m
+[32m        PATTERN          97 Passed!         [0m
+[32m        PATTERN          98 Passed!         [0m
+[32m        PATTERN          99 Passed!         [0m
+[32m        PATTERN         100 Passed!         [0m
+*************************************************************************
+*                Congratulations!                                       *
+*                Your execution cycles =   900 cycles                     *
+*                Your clock period = 9.8 ns                            *
+*************************************************************************
+==========================================================================================
+$finish called from file "PATTERN.v", line 143.
+$finish at simulation time             14347200
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 14347200 ps
+CPU Time:      0.440 seconds;       Data structure size:   0.4Mb
+Tue Jun 16 03:53:37 2026
+CPU time: 1.027 seconds to compile + .433 seconds to elab + .702 seconds to link + .501 seconds in simulation

@@ -1,0 +1,21 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Fri Apr 24 02:41:35 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               1
+    Cells do not drive (LINT-1)                                     1
+
+Nets                                                                3
+    Unloaded nets (LINT-2)                                          3
+--------------------------------------------------------------------------------
+
+Warning: In design 'DART_SCORE_CALC', cell 'B_3' does not drive any nets. (LINT-1)
+Warning: In design 'DART', net 'next_state[0]' driven by pin 'u_fsm/next_state[0]' has no loads. (LINT-2)
+Warning: In design 'DART', net 'next_state[1]' driven by pin 'u_fsm/next_state[1]' has no loads. (LINT-2)
+Warning: In design 'DART', net 'u_counter/net89' driven by pin 'u_counter/C87/Z' has no loads. (LINT-2)
+1

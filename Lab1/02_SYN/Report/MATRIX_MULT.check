@@ -1,0 +1,17 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Thu Apr  9 03:56:43 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Nets                                                                3
+    Unloaded nets (LINT-2)                                          3
+--------------------------------------------------------------------------------
+
+Warning: In design 'MATRIX_MULT', net 'net127' driven by pin 'C4105/Z' has no loads. (LINT-2)
+Warning: In design 'MATRIX_MULT', net 'net126' driven by pin 'C4081/Z' has no loads. (LINT-2)
+Warning: In design 'MATRIX_MULT', net 'net125' driven by pin 'C4077/Z' has no loads. (LINT-2)
+1

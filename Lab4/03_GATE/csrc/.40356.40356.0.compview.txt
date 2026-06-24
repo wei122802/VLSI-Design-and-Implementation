@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1779174490.840267259, "rt":0.48, "ut":0.12, "st":0.07}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1779174489.672184342}
+{"VCS_COMP_START_TIME": 1779174489.672184342}
+{"VCS_COMP_END_TIME": 1779174492.144592787}
+{"VCS_USER_OPTIONS": "-timescale=1ns/1fs -j4 -sverilog +v2k -full64 -Mupdate -R -debug_access+all -f filelist.f -o simv -l vcs.log -v /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v +define+GATE +neg_tchk"}

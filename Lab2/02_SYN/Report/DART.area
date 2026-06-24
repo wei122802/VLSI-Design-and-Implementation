@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : DART
+Version: U-2022.12
+Date   : Fri Apr 24 02:41:45 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+Number of ports:                           13
+Number of nets:                           366
+Number of cells:                          335
+Number of combinational cells:            308
+Number of sequential cells:                27
+Number of macros/black boxes:               0
+Number of buf/inv:                         64
+Number of references:                      98
+
+Combinational area:               3218.270402
+Buf/Inv area:                      492.246000
+Noncombinational area:             989.584198
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  4207.854600
+Total area:                 undefined
+1

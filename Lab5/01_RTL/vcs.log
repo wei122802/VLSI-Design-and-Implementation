@@ -1,0 +1,184 @@
+Command: vcs -timescale=1ns/1fs -j4 -sverilog +v2k -full64 -Mupdate -R -debug_access+all \
+-y /usr/cad/synopsys/synthesis/cur/dw/sim_ver/ +libext+.v -f filelist.f -o simv -l \
+vcs.log +define+RTL +notimingchecks
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Tue Jun 16 03:52:39 2026
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file 'TESTBED.v'
+Parsing included file 'PATTERN.v'.
+Back to file 'TESTBED.v'.
+Parsing included file 'MULT_err_SIM.vp'.
+Back to file 'TESTBED.v'.
+Parsing included file 'AMED.v'.
+Back to file 'TESTBED.v'.
+Top Level Modules:
+       TESTBED
+TimeScale is 1 ns / 10 ps
+Starting vcs inline pass...
+
+
+Note-[VCS_PARAL] Parallel code-gen enabled
+  VCS is running with parallel code generation(-j)...
+
+1 module and 0 UDP read.
+recompiling module TESTBED
+make[1]: Entering directory `/home/VLSILAB45/Lab5/01_RTL/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _41906_archive_1.so _41925_archive_1.so \
+_prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o \
+rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs \
+-lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/home/VLSILAB45/Lab5/01_RTL/csrc'
+Command: /home/VLSILAB45/Lab5/01_RTL/./simv +v2k +libext+.v -a vcs.log +define+RTL +notimingchecks
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Jun 16 03:52 2026
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'AMED.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+[32m        PATTERN           1 Passed!         [0m
+[32m        PATTERN           2 Passed!         [0m
+[32m        PATTERN           3 Passed!         [0m
+[32m        PATTERN           4 Passed!         [0m
+[32m        PATTERN           5 Passed!         [0m
+[32m        PATTERN           6 Passed!         [0m
+[32m        PATTERN           7 Passed!         [0m
+[32m        PATTERN           8 Passed!         [0m
+[32m        PATTERN           9 Passed!         [0m
+[32m        PATTERN          10 Passed!         [0m
+[32m        PATTERN          11 Passed!         [0m
+[32m        PATTERN          12 Passed!         [0m
+[32m        PATTERN          13 Passed!         [0m
+[32m        PATTERN          14 Passed!         [0m
+[32m        PATTERN          15 Passed!         [0m
+[32m        PATTERN          16 Passed!         [0m
+[32m        PATTERN          17 Passed!         [0m
+[32m        PATTERN          18 Passed!         [0m
+[32m        PATTERN          19 Passed!         [0m
+[32m        PATTERN          20 Passed!         [0m
+[32m        PATTERN          21 Passed!         [0m
+[32m        PATTERN          22 Passed!         [0m
+[32m        PATTERN          23 Passed!         [0m
+[32m        PATTERN          24 Passed!         [0m
+[32m        PATTERN          25 Passed!         [0m
+[32m        PATTERN          26 Passed!         [0m
+[32m        PATTERN          27 Passed!         [0m
+[32m        PATTERN          28 Passed!         [0m
+[32m        PATTERN          29 Passed!         [0m
+[32m        PATTERN          30 Passed!         [0m
+[32m        PATTERN          31 Passed!         [0m
+[32m        PATTERN          32 Passed!         [0m
+[32m        PATTERN          33 Passed!         [0m
+[32m        PATTERN          34 Passed!         [0m
+[32m        PATTERN          35 Passed!         [0m
+[32m        PATTERN          36 Passed!         [0m
+[32m        PATTERN          37 Passed!         [0m
+[32m        PATTERN          38 Passed!         [0m
+[32m        PATTERN          39 Passed!         [0m
+[32m        PATTERN          40 Passed!         [0m
+[32m        PATTERN          41 Passed!         [0m
+[32m        PATTERN          42 Passed!         [0m
+[32m        PATTERN          43 Passed!         [0m
+[32m        PATTERN          44 Passed!         [0m
+[32m        PATTERN          45 Passed!         [0m
+[32m        PATTERN          46 Passed!         [0m
+[32m        PATTERN          47 Passed!         [0m
+[32m        PATTERN          48 Passed!         [0m
+[32m        PATTERN          49 Passed!         [0m
+[32m        PATTERN          50 Passed!         [0m
+[32m        PATTERN          51 Passed!         [0m
+[32m        PATTERN          52 Passed!         [0m
+[32m        PATTERN          53 Passed!         [0m
+[32m        PATTERN          54 Passed!         [0m
+[32m        PATTERN          55 Passed!         [0m
+[32m        PATTERN          56 Passed!         [0m
+[32m        PATTERN          57 Passed!         [0m
+[32m        PATTERN          58 Passed!         [0m
+[32m        PATTERN          59 Passed!         [0m
+[32m        PATTERN          60 Passed!         [0m
+[32m        PATTERN          61 Passed!         [0m
+[32m        PATTERN          62 Passed!         [0m
+[32m        PATTERN          63 Passed!         [0m
+[32m        PATTERN          64 Passed!         [0m
+[32m        PATTERN          65 Passed!         [0m
+[32m        PATTERN          66 Passed!         [0m
+[32m        PATTERN          67 Passed!         [0m
+[32m        PATTERN          68 Passed!         [0m
+[32m        PATTERN          69 Passed!         [0m
+[32m        PATTERN          70 Passed!         [0m
+[32m        PATTERN          71 Passed!         [0m
+[32m        PATTERN          72 Passed!         [0m
+[32m        PATTERN          73 Passed!         [0m
+[32m        PATTERN          74 Passed!         [0m
+[32m        PATTERN          75 Passed!         [0m
+[32m        PATTERN          76 Passed!         [0m
+[32m        PATTERN          77 Passed!         [0m
+[32m        PATTERN          78 Passed!         [0m
+[32m        PATTERN          79 Passed!         [0m
+[32m        PATTERN          80 Passed!         [0m
+[32m        PATTERN          81 Passed!         [0m
+[32m        PATTERN          82 Passed!         [0m
+[32m        PATTERN          83 Passed!         [0m
+[32m        PATTERN          84 Passed!         [0m
+[32m        PATTERN          85 Passed!         [0m
+[32m        PATTERN          86 Passed!         [0m
+[32m        PATTERN          87 Passed!         [0m
+[32m        PATTERN          88 Passed!         [0m
+[32m        PATTERN          89 Passed!         [0m
+[32m        PATTERN          90 Passed!         [0m
+[32m        PATTERN          91 Passed!         [0m
+[32m        PATTERN          92 Passed!         [0m
+[32m        PATTERN          93 Passed!         [0m
+[32m        PATTERN          94 Passed!         [0m
+[32m        PATTERN          95 Passed!         [0m
+[32m        PATTERN          96 Passed!         [0m
+[32m        PATTERN          97 Passed!         [0m
+[32m        PATTERN          98 Passed!         [0m
+[32m        PATTERN          99 Passed!         [0m
+[32m        PATTERN         100 Passed!         [0m
+*************************************************************************
+*                Congratulations!                                       *
+*                Your execution cycles =   900 cycles                     *
+*                Your clock period = 9.8 ns                            *
+*************************************************************************
+==========================================================================================
+$finish called from file "PATTERN.v", line 143.
+$finish at simulation time              1434720
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 14347200 ps
+CPU Time:      0.420 seconds;       Data structure size:   0.0Mb
+Tue Jun 16 03:52:42 2026
+CPU time: .699 seconds to compile + .482 seconds to elab + .530 seconds to link + .479 seconds in simulation

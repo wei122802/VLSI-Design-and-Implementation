@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1775576331.650519330, "rt":0.68, "ut":0.31, "st":0.22}}
+{"vcselab":{"timestamp_begin":1775576332.455280040, "rt":0.57, "ut":0.30, "st":0.13}}
+{"link":{"timestamp_begin":1775576333.121108408, "rt":0.26, "ut":0.19, "st":0.14}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1775576330.567449335}
+{"VCS_COMP_START_TIME": 1775576330.567449335}
+{"VCS_COMP_END_TIME": 1775576334.337876081}
+{"VCS_USER_OPTIONS": "-timescale=1ns/1fs -j4 -sverilog +v2k -full64 -Mupdate -R -debug_access+all -y /usr/cad/synopsys/synthesis/cur/dw/sim_ver/ +libext+.v -f filelist.f -o simv -l vcs.log +define+RTL +notimingchecks"}
+{"vcs1": {"peak_mem": 327796}}
+{"stitch_vcselab": {"peak_mem": 230412}}

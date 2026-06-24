@@ -1,0 +1,604 @@
+Command: vcs -timescale=1ns/1fs -j4 -sverilog +v2k -full64 -Mupdate -R -debug_access+all \
+-y /usr/cad/synopsys/synthesis/cur/dw/sim_ver/ +libext+.v -f filelist.f -o simv -l \
+vcs.log +define+RTL +notimingchecks
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Fri Apr 24 02:41:20 2026
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file 'TESTBED.v'
+Parsing included file 'PATTERN.v'.
+Back to file 'TESTBED.v'.
+Parsing included file 'DART.v'.
+Parsing included file 'DART_FSM.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_COUNTER.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_UPDATE_EN.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_SCORE_CALC.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_PLAYER_SCORE.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_GAME_OVER.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_WINNER.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_OUT_VALID.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_OUT_WINNER.v'.
+Back to file 'DART.v'.
+Parsing included file 'DART_NEXT_SCORE.v'.
+Back to file 'DART.v'.
+Back to file 'TESTBED.v'.
+Top Level Modules:
+       TESTBED
+TimeScale is 1 ns / 10 ps
+Starting vcs inline pass...
+
+
+Note-[VCS_PARAL] Parallel code-gen enabled
+  VCS is running with parallel code generation(-j)...
+
+2 modules and 0 UDP read.
+recompiling module TESTBED
+recompiling module DART_PLAYER_SCORE
+Both modules done.
+make[1]: Entering directory `/home/VLSILAB45/Lab2/01_RTL/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _47801_archive_1.so _47819_archive_1.so \
+_prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o \
+rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs \
+-lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/2022.06//share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/home/VLSILAB45/Lab2/01_RTL/csrc'
+Command: /home/VLSILAB45/Lab2/01_RTL/./simv +v2k +libext+.v -a vcs.log +define+RTL +notimingchecks
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Apr 24 02:41 2026
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'DART.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+[32m        PATTERN           1 Passed!         [0m
+[32m        PATTERN           2 Passed!         [0m
+[32m        PATTERN           3 Passed!         [0m
+[32m        PATTERN           4 Passed!         [0m
+[32m        PATTERN           5 Passed!         [0m
+[32m        PATTERN           6 Passed!         [0m
+[32m        PATTERN           7 Passed!         [0m
+[32m        PATTERN           8 Passed!         [0m
+[32m        PATTERN           9 Passed!         [0m
+[32m        PATTERN          10 Passed!         [0m
+[32m        PATTERN          11 Passed!         [0m
+[32m        PATTERN          12 Passed!         [0m
+[32m        PATTERN          13 Passed!         [0m
+[32m        PATTERN          14 Passed!         [0m
+[32m        PATTERN          15 Passed!         [0m
+[32m        PATTERN          16 Passed!         [0m
+[32m        PATTERN          17 Passed!         [0m
+[32m        PATTERN          18 Passed!         [0m
+[32m        PATTERN          19 Passed!         [0m
+[32m        PATTERN          20 Passed!         [0m
+[32m        PATTERN          21 Passed!         [0m
+[32m        PATTERN          22 Passed!         [0m
+[32m        PATTERN          23 Passed!         [0m
+[32m        PATTERN          24 Passed!         [0m
+[32m        PATTERN          25 Passed!         [0m
+[32m        PATTERN          26 Passed!         [0m
+[32m        PATTERN          27 Passed!         [0m
+[32m        PATTERN          28 Passed!         [0m
+[32m        PATTERN          29 Passed!         [0m
+[32m        PATTERN          30 Passed!         [0m
+[32m        PATTERN          31 Passed!         [0m
+[32m        PATTERN          32 Passed!         [0m
+[32m        PATTERN          33 Passed!         [0m
+[32m        PATTERN          34 Passed!         [0m
+[32m        PATTERN          35 Passed!         [0m
+[32m        PATTERN          36 Passed!         [0m
+[32m        PATTERN          37 Passed!         [0m
+[32m        PATTERN          38 Passed!         [0m
+[32m        PATTERN          39 Passed!         [0m
+[32m        PATTERN          40 Passed!         [0m
+[32m        PATTERN          41 Passed!         [0m
+[32m        PATTERN          42 Passed!         [0m
+[32m        PATTERN          43 Passed!         [0m
+[32m        PATTERN          44 Passed!         [0m
+[32m        PATTERN          45 Passed!         [0m
+[32m        PATTERN          46 Passed!         [0m
+[32m        PATTERN          47 Passed!         [0m
+[32m        PATTERN          48 Passed!         [0m
+[32m        PATTERN          49 Passed!         [0m
+[32m        PATTERN          50 Passed!         [0m
+[32m        PATTERN          51 Passed!         [0m
+[32m        PATTERN          52 Passed!         [0m
+[32m        PATTERN          53 Passed!         [0m
+[32m        PATTERN          54 Passed!         [0m
+[32m        PATTERN          55 Passed!         [0m
+[32m        PATTERN          56 Passed!         [0m
+[32m        PATTERN          57 Passed!         [0m
+[32m        PATTERN          58 Passed!         [0m
+[32m        PATTERN          59 Passed!         [0m
+[32m        PATTERN          60 Passed!         [0m
+[32m        PATTERN          61 Passed!         [0m
+[32m        PATTERN          62 Passed!         [0m
+[32m        PATTERN          63 Passed!         [0m
+[32m        PATTERN          64 Passed!         [0m
+[32m        PATTERN          65 Passed!         [0m
+[32m        PATTERN          66 Passed!         [0m
+[32m        PATTERN          67 Passed!         [0m
+[32m        PATTERN          68 Passed!         [0m
+[32m        PATTERN          69 Passed!         [0m
+[32m        PATTERN          70 Passed!         [0m
+[32m        PATTERN          71 Passed!         [0m
+[32m        PATTERN          72 Passed!         [0m
+[32m        PATTERN          73 Passed!         [0m
+[32m        PATTERN          74 Passed!         [0m
+[32m        PATTERN          75 Passed!         [0m
+[32m        PATTERN          76 Passed!         [0m
+[32m        PATTERN          77 Passed!         [0m
+[32m        PATTERN          78 Passed!         [0m
+[32m        PATTERN          79 Passed!         [0m
+[32m        PATTERN          80 Passed!         [0m
+[32m        PATTERN          81 Passed!         [0m
+[32m        PATTERN          82 Passed!         [0m
+[32m        PATTERN          83 Passed!         [0m
+[32m        PATTERN          84 Passed!         [0m
+[32m        PATTERN          85 Passed!         [0m
+[32m        PATTERN          86 Passed!         [0m
+[32m        PATTERN          87 Passed!         [0m
+[32m        PATTERN          88 Passed!         [0m
+[32m        PATTERN          89 Passed!         [0m
+[32m        PATTERN          90 Passed!         [0m
+[32m        PATTERN          91 Passed!         [0m
+[32m        PATTERN          92 Passed!         [0m
+[32m        PATTERN          93 Passed!         [0m
+[32m        PATTERN          94 Passed!         [0m
+[32m        PATTERN          95 Passed!         [0m
+[32m        PATTERN          96 Passed!         [0m
+[32m        PATTERN          97 Passed!         [0m
+[32m        PATTERN          98 Passed!         [0m
+[32m        PATTERN          99 Passed!         [0m
+[32m        PATTERN         100 Passed!         [0m
+[32m        PATTERN         101 Passed!         [0m
+[32m        PATTERN         102 Passed!         [0m
+[32m        PATTERN         103 Passed!         [0m
+[32m        PATTERN         104 Passed!         [0m
+[32m        PATTERN         105 Passed!         [0m
+[32m        PATTERN         106 Passed!         [0m
+[32m        PATTERN         107 Passed!         [0m
+[32m        PATTERN         108 Passed!         [0m
+[32m        PATTERN         109 Passed!         [0m
+[32m        PATTERN         110 Passed!         [0m
+[32m        PATTERN         111 Passed!         [0m
+[32m        PATTERN         112 Passed!         [0m
+[32m        PATTERN         113 Passed!         [0m
+[32m        PATTERN         114 Passed!         [0m
+[32m        PATTERN         115 Passed!         [0m
+[32m        PATTERN         116 Passed!         [0m
+[32m        PATTERN         117 Passed!         [0m
+[32m        PATTERN         118 Passed!         [0m
+[32m        PATTERN         119 Passed!         [0m
+[32m        PATTERN         120 Passed!         [0m
+[32m        PATTERN         121 Passed!         [0m
+[32m        PATTERN         122 Passed!         [0m
+[32m        PATTERN         123 Passed!         [0m
+[32m        PATTERN         124 Passed!         [0m
+[32m        PATTERN         125 Passed!         [0m
+[32m        PATTERN         126 Passed!         [0m
+[32m        PATTERN         127 Passed!         [0m
+[32m        PATTERN         128 Passed!         [0m
+[32m        PATTERN         129 Passed!         [0m
+[32m        PATTERN         130 Passed!         [0m
+[32m        PATTERN         131 Passed!         [0m
+[32m        PATTERN         132 Passed!         [0m
+[32m        PATTERN         133 Passed!         [0m
+[32m        PATTERN         134 Passed!         [0m
+[32m        PATTERN         135 Passed!         [0m
+[32m        PATTERN         136 Passed!         [0m
+[32m        PATTERN         137 Passed!         [0m
+[32m        PATTERN         138 Passed!         [0m
+[32m        PATTERN         139 Passed!         [0m
+[32m        PATTERN         140 Passed!         [0m
+[32m        PATTERN         141 Passed!         [0m
+[32m        PATTERN         142 Passed!         [0m
+[32m        PATTERN         143 Passed!         [0m
+[32m        PATTERN         144 Passed!         [0m
+[32m        PATTERN         145 Passed!         [0m
+[32m        PATTERN         146 Passed!         [0m
+[32m        PATTERN         147 Passed!         [0m
+[32m        PATTERN         148 Passed!         [0m
+[32m        PATTERN         149 Passed!         [0m
+[32m        PATTERN         150 Passed!         [0m
+[32m        PATTERN         151 Passed!         [0m
+[32m        PATTERN         152 Passed!         [0m
+[32m        PATTERN         153 Passed!         [0m
+[32m        PATTERN         154 Passed!         [0m
+[32m        PATTERN         155 Passed!         [0m
+[32m        PATTERN         156 Passed!         [0m
+[32m        PATTERN         157 Passed!         [0m
+[32m        PATTERN         158 Passed!         [0m
+[32m        PATTERN         159 Passed!         [0m
+[32m        PATTERN         160 Passed!         [0m
+[32m        PATTERN         161 Passed!         [0m
+[32m        PATTERN         162 Passed!         [0m
+[32m        PATTERN         163 Passed!         [0m
+[32m        PATTERN         164 Passed!         [0m
+[32m        PATTERN         165 Passed!         [0m
+[32m        PATTERN         166 Passed!         [0m
+[32m        PATTERN         167 Passed!         [0m
+[32m        PATTERN         168 Passed!         [0m
+[32m        PATTERN         169 Passed!         [0m
+[32m        PATTERN         170 Passed!         [0m
+[32m        PATTERN         171 Passed!         [0m
+[32m        PATTERN         172 Passed!         [0m
+[32m        PATTERN         173 Passed!         [0m
+[32m        PATTERN         174 Passed!         [0m
+[32m        PATTERN         175 Passed!         [0m
+[32m        PATTERN         176 Passed!         [0m
+[32m        PATTERN         177 Passed!         [0m
+[32m        PATTERN         178 Passed!         [0m
+[32m        PATTERN         179 Passed!         [0m
+[32m        PATTERN         180 Passed!         [0m
+[32m        PATTERN         181 Passed!         [0m
+[32m        PATTERN         182 Passed!         [0m
+[32m        PATTERN         183 Passed!         [0m
+[32m        PATTERN         184 Passed!         [0m
+[32m        PATTERN         185 Passed!         [0m
+[32m        PATTERN         186 Passed!         [0m
+[32m        PATTERN         187 Passed!         [0m
+[32m        PATTERN         188 Passed!         [0m
+[32m        PATTERN         189 Passed!         [0m
+[32m        PATTERN         190 Passed!         [0m
+[32m        PATTERN         191 Passed!         [0m
+[32m        PATTERN         192 Passed!         [0m
+[32m        PATTERN         193 Passed!         [0m
+[32m        PATTERN         194 Passed!         [0m
+[32m        PATTERN         195 Passed!         [0m
+[32m        PATTERN         196 Passed!         [0m
+[32m        PATTERN         197 Passed!         [0m
+[32m        PATTERN         198 Passed!         [0m
+[32m        PATTERN         199 Passed!         [0m
+[32m        PATTERN         200 Passed!         [0m
+[32m        PATTERN         201 Passed!         [0m
+[32m        PATTERN         202 Passed!         [0m
+[32m        PATTERN         203 Passed!         [0m
+[32m        PATTERN         204 Passed!         [0m
+[32m        PATTERN         205 Passed!         [0m
+[32m        PATTERN         206 Passed!         [0m
+[32m        PATTERN         207 Passed!         [0m
+[32m        PATTERN         208 Passed!         [0m
+[32m        PATTERN         209 Passed!         [0m
+[32m        PATTERN         210 Passed!         [0m
+[32m        PATTERN         211 Passed!         [0m
+[32m        PATTERN         212 Passed!         [0m
+[32m        PATTERN         213 Passed!         [0m
+[32m        PATTERN         214 Passed!         [0m
+[32m        PATTERN         215 Passed!         [0m
+[32m        PATTERN         216 Passed!         [0m
+[32m        PATTERN         217 Passed!         [0m
+[32m        PATTERN         218 Passed!         [0m
+[32m        PATTERN         219 Passed!         [0m
+[32m        PATTERN         220 Passed!         [0m
+[32m        PATTERN         221 Passed!         [0m
+[32m        PATTERN         222 Passed!         [0m
+[32m        PATTERN         223 Passed!         [0m
+[32m        PATTERN         224 Passed!         [0m
+[32m        PATTERN         225 Passed!         [0m
+[32m        PATTERN         226 Passed!         [0m
+[32m        PATTERN         227 Passed!         [0m
+[32m        PATTERN         228 Passed!         [0m
+[32m        PATTERN         229 Passed!         [0m
+[32m        PATTERN         230 Passed!         [0m
+[32m        PATTERN         231 Passed!         [0m
+[32m        PATTERN         232 Passed!         [0m
+[32m        PATTERN         233 Passed!         [0m
+[32m        PATTERN         234 Passed!         [0m
+[32m        PATTERN         235 Passed!         [0m
+[32m        PATTERN         236 Passed!         [0m
+[32m        PATTERN         237 Passed!         [0m
+[32m        PATTERN         238 Passed!         [0m
+[32m        PATTERN         239 Passed!         [0m
+[32m        PATTERN         240 Passed!         [0m
+[32m        PATTERN         241 Passed!         [0m
+[32m        PATTERN         242 Passed!         [0m
+[32m        PATTERN         243 Passed!         [0m
+[32m        PATTERN         244 Passed!         [0m
+[32m        PATTERN         245 Passed!         [0m
+[32m        PATTERN         246 Passed!         [0m
+[32m        PATTERN         247 Passed!         [0m
+[32m        PATTERN         248 Passed!         [0m
+[32m        PATTERN         249 Passed!         [0m
+[32m        PATTERN         250 Passed!         [0m
+[32m        PATTERN         251 Passed!         [0m
+[32m        PATTERN         252 Passed!         [0m
+[32m        PATTERN         253 Passed!         [0m
+[32m        PATTERN         254 Passed!         [0m
+[32m        PATTERN         255 Passed!         [0m
+[32m        PATTERN         256 Passed!         [0m
+[32m        PATTERN         257 Passed!         [0m
+[32m        PATTERN         258 Passed!         [0m
+[32m        PATTERN         259 Passed!         [0m
+[32m        PATTERN         260 Passed!         [0m
+[32m        PATTERN         261 Passed!         [0m
+[32m        PATTERN         262 Passed!         [0m
+[32m        PATTERN         263 Passed!         [0m
+[32m        PATTERN         264 Passed!         [0m
+[32m        PATTERN         265 Passed!         [0m
+[32m        PATTERN         266 Passed!         [0m
+[32m        PATTERN         267 Passed!         [0m
+[32m        PATTERN         268 Passed!         [0m
+[32m        PATTERN         269 Passed!         [0m
+[32m        PATTERN         270 Passed!         [0m
+[32m        PATTERN         271 Passed!         [0m
+[32m        PATTERN         272 Passed!         [0m
+[32m        PATTERN         273 Passed!         [0m
+[32m        PATTERN         274 Passed!         [0m
+[32m        PATTERN         275 Passed!         [0m
+[32m        PATTERN         276 Passed!         [0m
+[32m        PATTERN         277 Passed!         [0m
+[32m        PATTERN         278 Passed!         [0m
+[32m        PATTERN         279 Passed!         [0m
+[32m        PATTERN         280 Passed!         [0m
+[32m        PATTERN         281 Passed!         [0m
+[32m        PATTERN         282 Passed!         [0m
+[32m        PATTERN         283 Passed!         [0m
+[32m        PATTERN         284 Passed!         [0m
+[32m        PATTERN         285 Passed!         [0m
+[32m        PATTERN         286 Passed!         [0m
+[32m        PATTERN         287 Passed!         [0m
+[32m        PATTERN         288 Passed!         [0m
+[32m        PATTERN         289 Passed!         [0m
+[32m        PATTERN         290 Passed!         [0m
+[32m        PATTERN         291 Passed!         [0m
+[32m        PATTERN         292 Passed!         [0m
+[32m        PATTERN         293 Passed!         [0m
+[32m        PATTERN         294 Passed!         [0m
+[32m        PATTERN         295 Passed!         [0m
+[32m        PATTERN         296 Passed!         [0m
+[32m        PATTERN         297 Passed!         [0m
+[32m        PATTERN         298 Passed!         [0m
+[32m        PATTERN         299 Passed!         [0m
+[32m        PATTERN         300 Passed!         [0m
+[32m        PATTERN         301 Passed!         [0m
+[32m        PATTERN         302 Passed!         [0m
+[32m        PATTERN         303 Passed!         [0m
+[32m        PATTERN         304 Passed!         [0m
+[32m        PATTERN         305 Passed!         [0m
+[32m        PATTERN         306 Passed!         [0m
+[32m        PATTERN         307 Passed!         [0m
+[32m        PATTERN         308 Passed!         [0m
+[32m        PATTERN         309 Passed!         [0m
+[32m        PATTERN         310 Passed!         [0m
+[32m        PATTERN         311 Passed!         [0m
+[32m        PATTERN         312 Passed!         [0m
+[32m        PATTERN         313 Passed!         [0m
+[32m        PATTERN         314 Passed!         [0m
+[32m        PATTERN         315 Passed!         [0m
+[32m        PATTERN         316 Passed!         [0m
+[32m        PATTERN         317 Passed!         [0m
+[32m        PATTERN         318 Passed!         [0m
+[32m        PATTERN         319 Passed!         [0m
+[32m        PATTERN         320 Passed!         [0m
+[32m        PATTERN         321 Passed!         [0m
+[32m        PATTERN         322 Passed!         [0m
+[32m        PATTERN         323 Passed!         [0m
+[32m        PATTERN         324 Passed!         [0m
+[32m        PATTERN         325 Passed!         [0m
+[32m        PATTERN         326 Passed!         [0m
+[32m        PATTERN         327 Passed!         [0m
+[32m        PATTERN         328 Passed!         [0m
+[32m        PATTERN         329 Passed!         [0m
+[32m        PATTERN         330 Passed!         [0m
+[32m        PATTERN         331 Passed!         [0m
+[32m        PATTERN         332 Passed!         [0m
+[32m        PATTERN         333 Passed!         [0m
+[32m        PATTERN         334 Passed!         [0m
+[32m        PATTERN         335 Passed!         [0m
+[32m        PATTERN         336 Passed!         [0m
+[32m        PATTERN         337 Passed!         [0m
+[32m        PATTERN         338 Passed!         [0m
+[32m        PATTERN         339 Passed!         [0m
+[32m        PATTERN         340 Passed!         [0m
+[32m        PATTERN         341 Passed!         [0m
+[32m        PATTERN         342 Passed!         [0m
+[32m        PATTERN         343 Passed!         [0m
+[32m        PATTERN         344 Passed!         [0m
+[32m        PATTERN         345 Passed!         [0m
+[32m        PATTERN         346 Passed!         [0m
+[32m        PATTERN         347 Passed!         [0m
+[32m        PATTERN         348 Passed!         [0m
+[32m        PATTERN         349 Passed!         [0m
+[32m        PATTERN         350 Passed!         [0m
+[32m        PATTERN         351 Passed!         [0m
+[32m        PATTERN         352 Passed!         [0m
+[32m        PATTERN         353 Passed!         [0m
+[32m        PATTERN         354 Passed!         [0m
+[32m        PATTERN         355 Passed!         [0m
+[32m        PATTERN         356 Passed!         [0m
+[32m        PATTERN         357 Passed!         [0m
+[32m        PATTERN         358 Passed!         [0m
+[32m        PATTERN         359 Passed!         [0m
+[32m        PATTERN         360 Passed!         [0m
+[32m        PATTERN         361 Passed!         [0m
+[32m        PATTERN         362 Passed!         [0m
+[32m        PATTERN         363 Passed!         [0m
+[32m        PATTERN         364 Passed!         [0m
+[32m        PATTERN         365 Passed!         [0m
+[32m        PATTERN         366 Passed!         [0m
+[32m        PATTERN         367 Passed!         [0m
+[32m        PATTERN         368 Passed!         [0m
+[32m        PATTERN         369 Passed!         [0m
+[32m        PATTERN         370 Passed!         [0m
+[32m        PATTERN         371 Passed!         [0m
+[32m        PATTERN         372 Passed!         [0m
+[32m        PATTERN         373 Passed!         [0m
+[32m        PATTERN         374 Passed!         [0m
+[32m        PATTERN         375 Passed!         [0m
+[32m        PATTERN         376 Passed!         [0m
+[32m        PATTERN         377 Passed!         [0m
+[32m        PATTERN         378 Passed!         [0m
+[32m        PATTERN         379 Passed!         [0m
+[32m        PATTERN         380 Passed!         [0m
+[32m        PATTERN         381 Passed!         [0m
+[32m        PATTERN         382 Passed!         [0m
+[32m        PATTERN         383 Passed!         [0m
+[32m        PATTERN         384 Passed!         [0m
+[32m        PATTERN         385 Passed!         [0m
+[32m        PATTERN         386 Passed!         [0m
+[32m        PATTERN         387 Passed!         [0m
+[32m        PATTERN         388 Passed!         [0m
+[32m        PATTERN         389 Passed!         [0m
+[32m        PATTERN         390 Passed!         [0m
+[32m        PATTERN         391 Passed!         [0m
+[32m        PATTERN         392 Passed!         [0m
+[32m        PATTERN         393 Passed!         [0m
+[32m        PATTERN         394 Passed!         [0m
+[32m        PATTERN         395 Passed!         [0m
+[32m        PATTERN         396 Passed!         [0m
+[32m        PATTERN         397 Passed!         [0m
+[32m        PATTERN         398 Passed!         [0m
+[32m        PATTERN         399 Passed!         [0m
+[32m        PATTERN         400 Passed!         [0m
+[32m        PATTERN         401 Passed!         [0m
+[32m        PATTERN         402 Passed!         [0m
+[32m        PATTERN         403 Passed!         [0m
+[32m        PATTERN         404 Passed!         [0m
+[32m        PATTERN         405 Passed!         [0m
+[32m        PATTERN         406 Passed!         [0m
+[32m        PATTERN         407 Passed!         [0m
+[32m        PATTERN         408 Passed!         [0m
+[32m        PATTERN         409 Passed!         [0m
+[32m        PATTERN         410 Passed!         [0m
+[32m        PATTERN         411 Passed!         [0m
+[32m        PATTERN         412 Passed!         [0m
+[32m        PATTERN         413 Passed!         [0m
+[32m        PATTERN         414 Passed!         [0m
+[32m        PATTERN         415 Passed!         [0m
+[32m        PATTERN         416 Passed!         [0m
+[32m        PATTERN         417 Passed!         [0m
+[32m        PATTERN         418 Passed!         [0m
+[32m        PATTERN         419 Passed!         [0m
+[32m        PATTERN         420 Passed!         [0m
+[32m        PATTERN         421 Passed!         [0m
+[32m        PATTERN         422 Passed!         [0m
+[32m        PATTERN         423 Passed!         [0m
+[32m        PATTERN         424 Passed!         [0m
+[32m        PATTERN         425 Passed!         [0m
+[32m        PATTERN         426 Passed!         [0m
+[32m        PATTERN         427 Passed!         [0m
+[32m        PATTERN         428 Passed!         [0m
+[32m        PATTERN         429 Passed!         [0m
+[32m        PATTERN         430 Passed!         [0m
+[32m        PATTERN         431 Passed!         [0m
+[32m        PATTERN         432 Passed!         [0m
+[32m        PATTERN         433 Passed!         [0m
+[32m        PATTERN         434 Passed!         [0m
+[32m        PATTERN         435 Passed!         [0m
+[32m        PATTERN         436 Passed!         [0m
+[32m        PATTERN         437 Passed!         [0m
+[32m        PATTERN         438 Passed!         [0m
+[32m        PATTERN         439 Passed!         [0m
+[32m        PATTERN         440 Passed!         [0m
+[32m        PATTERN         441 Passed!         [0m
+[32m        PATTERN         442 Passed!         [0m
+[32m        PATTERN         443 Passed!         [0m
+[32m        PATTERN         444 Passed!         [0m
+[32m        PATTERN         445 Passed!         [0m
+[32m        PATTERN         446 Passed!         [0m
+[32m        PATTERN         447 Passed!         [0m
+[32m        PATTERN         448 Passed!         [0m
+[32m        PATTERN         449 Passed!         [0m
+[32m        PATTERN         450 Passed!         [0m
+[32m        PATTERN         451 Passed!         [0m
+[32m        PATTERN         452 Passed!         [0m
+[32m        PATTERN         453 Passed!         [0m
+[32m        PATTERN         454 Passed!         [0m
+[32m        PATTERN         455 Passed!         [0m
+[32m        PATTERN         456 Passed!         [0m
+[32m        PATTERN         457 Passed!         [0m
+[32m        PATTERN         458 Passed!         [0m
+[32m        PATTERN         459 Passed!         [0m
+[32m        PATTERN         460 Passed!         [0m
+[32m        PATTERN         461 Passed!         [0m
+[32m        PATTERN         462 Passed!         [0m
+[32m        PATTERN         463 Passed!         [0m
+[32m        PATTERN         464 Passed!         [0m
+[32m        PATTERN         465 Passed!         [0m
+[32m        PATTERN         466 Passed!         [0m
+[32m        PATTERN         467 Passed!         [0m
+[32m        PATTERN         468 Passed!         [0m
+[32m        PATTERN         469 Passed!         [0m
+[32m        PATTERN         470 Passed!         [0m
+[32m        PATTERN         471 Passed!         [0m
+[32m        PATTERN         472 Passed!         [0m
+[32m        PATTERN         473 Passed!         [0m
+[32m        PATTERN         474 Passed!         [0m
+[32m        PATTERN         475 Passed!         [0m
+[32m        PATTERN         476 Passed!         [0m
+[32m        PATTERN         477 Passed!         [0m
+[32m        PATTERN         478 Passed!         [0m
+[32m        PATTERN         479 Passed!         [0m
+[32m        PATTERN         480 Passed!         [0m
+[32m        PATTERN         481 Passed!         [0m
+[32m        PATTERN         482 Passed!         [0m
+[32m        PATTERN         483 Passed!         [0m
+[32m        PATTERN         484 Passed!         [0m
+[32m        PATTERN         485 Passed!         [0m
+[32m        PATTERN         486 Passed!         [0m
+[32m        PATTERN         487 Passed!         [0m
+[32m        PATTERN         488 Passed!         [0m
+[32m        PATTERN         489 Passed!         [0m
+[32m        PATTERN         490 Passed!         [0m
+[32m        PATTERN         491 Passed!         [0m
+[32m        PATTERN         492 Passed!         [0m
+[32m        PATTERN         493 Passed!         [0m
+[32m        PATTERN         494 Passed!         [0m
+[32m        PATTERN         495 Passed!         [0m
+[32m        PATTERN         496 Passed!         [0m
+[32m        PATTERN         497 Passed!         [0m
+[32m        PATTERN         498 Passed!         [0m
+[32m        PATTERN         499 Passed!         [0m
+[32m        PATTERN         500 Passed!         [0m
+*************************************************************************
+*                Congratulations!                                       *
+*                Your execution cycles =   500 cycles                   *
+*                Your clock period = 2.9 ns                            *
+*************************************************************************
+==========================================================================================
+$finish called from file "PATTERN.v", line 146.
+$finish at simulation time              3708665
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 37086650 ps
+CPU Time:      0.460 seconds;       Data structure size:   0.0Mb
+Fri Apr 24 02:41:23 2026
+CPU time: .740 seconds to compile + .496 seconds to elab + .529 seconds to link + .529 seconds in simulation

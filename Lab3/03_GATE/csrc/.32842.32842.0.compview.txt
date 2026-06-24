@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1778138359.287081457, "rt":4.96, "ut":4.46, "st":0.57}}
+{"vcselab":{"timestamp_begin":1778138364.393620146, "rt":1.47, "ut":1.08, "st":0.12}}
+{"link":{"timestamp_begin":1778138365.969006125, "rt":0.46, "ut":0.52, "st":0.28}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778138358.117271993}
+{"VCS_COMP_START_TIME": 1778138358.117271993}
+{"VCS_COMP_END_TIME": 1778138367.417377398}
+{"VCS_USER_OPTIONS": "-timescale=1ns/1fs -j4 -sverilog +v2k -full64 -Mupdate -R -debug_access+all -f filelist.f -o simv -l vcs.log -v /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v +define+GATE +neg_tchk"}
+{"vcs1": {"peak_mem": 403580}}
+{"stitch_vcselab": {"peak_mem": 257708}}

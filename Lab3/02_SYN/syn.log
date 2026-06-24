@@ -1,0 +1,709 @@
+#======================================================
+#
+# Synopsys Synthesis Scripts (Design Vision dctcl mode)
+#
+#======================================================
+#======================================================
+# (A) Global Parameters
+#======================================================
+set DESIGN "MATRIX_MULT"
+MATRIX_MULT
+set CYCLE 4.3
+4.3
+set INPUT_DLY [expr 0.5*$CYCLE]
+2.15
+set OUTPUT_DLY [expr 0.5*$CYCLE]
+2.15
+#======================================================
+# (B) Read RTL Code
+#======================================================
+# (B-1) analyze + elaborate
+set hdlin_auto_save_templates TRUE
+TRUE
+analyze -f sverilog $DESIGN\.v 
+Running PRESTO HDLC
+Compiling source file ../01_RTL/MATRIX_MULT.v
+Presto compilation completed successfully.
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/standard.sldb'
+1
+elaborate $DESIGN  
+Loading db file '/usr/cad/synopsys/synthesis/2022.12/libraries/syn/gtech.db'
+  Loading link library 'slow'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+        in routine MATRIX_MULT line 36 in file
+                '../01_RTL/MATRIX_MULT.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     in_cnt_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine MATRIX_MULT line 45 in file
+                '../01_RTL/MATRIX_MULT.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     out_cnt_reg     | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine MATRIX_MULT line 54 in file
+                '../01_RTL/MATRIX_MULT.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine MATRIX_MULT line 61 in file
+                '../01_RTL/MATRIX_MULT.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_data_reg     | Flip-flop |  20   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine MATRIX_MULT line 70 in file
+                '../01_RTL/MATRIX_MULT.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    matrix_A_reg     | Flip-flop |  504  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine MATRIX_MULT line 84 in file
+                '../01_RTL/MATRIX_MULT.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      a_sel_reg      | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine MATRIX_MULT line 93 in file
+                '../01_RTL/MATRIX_MULT.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      mat_c_reg      | Flip-flop | 1280  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (MATRIX_MULT)
+Elaborated 1 design.
+Current design is now 'MATRIX_MULT'.
+1
+# (B-2) read_sverilog
+#read_sverilog $DESIGN\.v
+# (B-3) set current design
+current_design $DESIGN
+Current design is 'MATRIX_MULT'.
+{MATRIX_MULT}
+link
+
+  Linking design 'MATRIX_MULT'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  MATRIX_MULT                 /home/VLSILAB45/Lab3/02_SYN/MATRIX_MULT.db
+  slow (library)              /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/2022.12/libraries/syn/dw_foundation.sldb
+
+1
+#======================================================
+#  (C) Global Setting
+#======================================================
+#set_wire_load_mode top
+#set_operating_conditions -max WCCOM -min BCCOM
+#set_wire_load_model -name umc18_wl10 -library slow
+#======================================================
+#  (D) Set Design Constraints
+#======================================================
+# (D-1) Setting Clock Constraints
+create_clock -name clk -period $CYCLE [get_ports clk] 
+1
+set_dont_touch_network             [get_clocks clk]
+1
+set_fix_hold                       [get_clocks clk]
+1
+set_clock_uncertainty       0.1    [get_clocks clk]
+1
+# set_clock_latency   -source 0      [get_clocks clk]
+# set_clock_latency           1      [get_clocks clk] 
+set_input_transition        0.5    [all_inputs] 
+1
+set_clock_transition        0.1    [all_clocks] 
+1
+# (D-2) Setting in/out Constraints
+set_input_delay   -max  $INPUT_DLY  -clock clk   [all_inputs] ;  # set_up time check 
+1
+set_input_delay   -min  0           -clock clk   [all_inputs] ;  # hold   time check 
+1
+set_output_delay  -max  $OUTPUT_DLY -clock clk   [all_outputs] ; # set_up time check 
+1
+set_output_delay  -min  0           -clock clk   [all_outputs] ; # hold   time check 
+1
+set_input_delay 0 -clock clk clk
+1
+set_input_delay 0 -clock clk rst_n
+1
+#set_max_delay $CYCLE -from [all_inputs] -to [all_outputs]
+# (D-3) Setting Design Environment
+# set_driving_cell -library umc18io3v5v_slow -lib_cell P2C    -pin {Y}  [get_ports clk]
+# set_driving_cell -library umc18io3v5v_slow -lib_cell P2C    -pin {Y}  [remove_from_collection [all_inputs] [get_ports clk]]
+# set_load  [load_of "umc18io3v5v_slow/P8C/A"]       [all_outputs] ; # ~= 0.038
+set_load 0.05 [all_outputs]
+1
+# (D-4) Setting DRC Constraint
+#set_max_delay           0     ; # Optimize delay max effort                 
+#set_max_area            0      ; # Optimize area max effort           
+set_max_transition      3       [all_inputs]   ; # U18 LUT Max Transition Value  
+1
+set_max_capacitance     0.15    [all_inputs]   ; # U18 LUT Max Capacitance Value
+1
+set_max_fanout          10      [all_inputs]
+1
+# set_dont_use slow/JKFF*
+#set_dont_touch [get_cells core_reg_macro]
+#set hdlin_ff_always_sync_set_reset true
+# (D-5) Report Clock skew
+report_clock -skew clk
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Updating design information... (UID-85)
+Warning: Design 'MATRIX_MULT' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : clock_skew
+Design : MATRIX_MULT
+Version: U-2022.12
+Date   : Thu May  7 05:44:46 2026
+****************************************
+
+                 Rise      Fall  Min Rise  Min fall        Uncertainty
+Object          Delay     Delay     Delay     Delay     Plus      Minus
+--------------------------------------------------------------------------------
+clk                 -         -         -         -      0.10      0.10
+
+                 Max Transition      Min Transition
+Object           Rise      Fall      Rise      Fall
+-------------------------------------------------------
+clk              0.10      0.10      0.10      0.10
+1
+check_timing
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+
+Information: Checking unconstrained_endpoints...
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1
+#======================================================
+#  (E) Optimization
+#======================================================
+check_design > Report/$DESIGN\.check
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+set_fix_hold [all_clocks]
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 4 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.0 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler NXT WLM                                                           |
+| Comand Line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 2298                                   |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 1881                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 24                                     |
+| Number of Dont Touch Nets                               | 1                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'MATRIX_MULT'
+
+Loaded alib file './alib-52/slow.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'MATRIX_MULT'
+ Implement Synthetic for 'MATRIX_MULT'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'MATRIX_MULT'. (DDB-72)
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:33  770996.4      0.42     325.7    1496.3                           834960320.0000      0.00  
+    0:00:34  770977.7      0.42     325.9    1496.3                           834950208.0000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:00:34  770928.5      0.42     325.9    1496.3                           834901056.0000      0.00  
+    0:00:35  770928.5      0.42     325.9    1496.3                           834901056.0000      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:43  400090.8      1.03     671.8     916.7                           374364960.0000      0.00  
+  Mapping 'MATRIX_MULT_DP_OP_287J1_181_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_279J1_173_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_275J1_169_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_271J1_165_7340_1'
+  Mapping 'MATRIX_MULT_DP_OP_263J1_157_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_259J1_153_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_255J1_149_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_251J1_145_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_243J1_137_7340_1'
+  Mapping 'MATRIX_MULT_DP_OP_239J1_133_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_231J1_125_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_281J1_175_7340_1'
+  Mapping 'MATRIX_MULT_DP_OP_276J1_170_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_254J1_148_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_253J1_147_7340_0'
+  Mapping 'MATRIX_MULT_DP_OP_236J1_130_7340_0'
+    0:00:48  448106.8      0.58     421.9    4306.3                           438575808.0000      0.00  
+    0:00:48  448106.8      0.58     421.9    4306.3                           438575808.0000      0.00  
+    0:00:49  448110.2      0.58     422.7    4306.3                           438939072.0000      0.00  
+    0:00:51  445353.6      0.58     421.2    4336.5                           435418688.0000      0.00  
+    0:00:52  437579.5      3.26    1611.9    9309.8                           425502272.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:57  432051.1      3.17    1534.4    8700.3                           419417920.0000      0.00  
+    0:01:00  426921.6      3.17    1475.8    7891.3                           414870528.0000      0.00  
+    0:01:00  426288.4      3.17    1474.6    7880.2                           414531392.0000      0.00  
+    0:01:03  425521.2      0.58     445.6    9361.7                           415831744.0000      0.00  
+    0:01:06  428033.4      0.58     389.0   10506.9                           418961248.0000      0.00  
+    0:01:09  429905.6      0.58     369.5   10719.2                           421599584.0000      0.00  
+    0:01:11  431762.5      0.58     352.7   10911.8                           424287488.0000      0.00  
+    0:01:14  432748.7      0.58     340.7   11162.2                           425503808.0000      0.00  
+    0:01:16  433510.9      0.58     330.4   11241.3                           426499776.0000      0.00  
+    0:01:16  433510.9      0.58     330.4   11241.3                           426499776.0000      0.00  
+    0:01:18  416991.8      0.57     327.8   10195.2                           408819072.0000      0.00  
+    0:01:18  416991.8      0.57     327.8   10195.2                           408819072.0000      0.00  
+    0:01:25  437922.4      0.40     295.3   12357.1                           431208832.0000      0.00  
+    0:01:25  437922.4      0.40     295.3   12357.1                           431208832.0000      0.00  
+    0:01:26  440592.4      0.36     265.4   12488.2                           434002272.0000      0.00  
+    0:01:26  440592.4      0.36     265.4   12488.2                           434002272.0000      0.00  
+    0:01:33  456821.3      0.33     247.8   15951.4                           451865536.0000      0.00  
+    0:01:33  456821.3      0.33     247.8   15951.4                           451865536.0000      0.00  
+    0:01:43  472298.2      0.20     135.7   22568.4                           465780768.0000      0.00  
+    0:01:43  472298.2      0.20     135.7   22568.4                           465780768.0000      0.00  
+    0:01:52  483198.9      0.19     124.1   25041.4                           478614752.0000      0.00  
+    0:01:52  483198.9      0.19     124.1   25041.4                           478614752.0000      0.00  
+    0:01:59  494289.7      0.16      79.9   26383.8                           489975936.0000      0.00  
+    0:01:59  494289.7      0.16      79.9   26383.8                           489975936.0000      0.00  
+    0:02:02  498100.3      0.13      75.4   26784.8                           494255008.0000      0.00  
+    0:02:02  498100.3      0.13      75.4   26784.8                           494255008.0000      0.00  
+    0:02:08  506534.7      0.10      52.9   27614.1                           503756416.0000      0.00  
+    0:02:08  506534.7      0.10      52.9   27614.1                           503756416.0000      0.00  
+    0:02:14  512400.9      0.09      48.3   28247.6                           510516576.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:02:14  512400.9      0.09      48.3   28247.6                           510516576.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:02:16  510963.2      0.11      46.1   22507.4 in_data[56]               508793696.0000      0.00  
+    0:02:17  511312.9      0.11      46.0   21667.3 in_data[11]               509070400.0000      0.00  
+    0:02:18  511482.6      0.09      44.9   21074.2 mat_c_reg[1][6][17]/D     509470624.0000      0.00  
+    0:02:19  511564.1      0.09      43.8   20792.6 mat_c_reg[5][4][18]/D     509631296.0000      0.00  
+    0:02:20  511710.1      0.08      42.7   20299.7 mat_c_reg[0][5][15]/D     509944992.0000      0.00  
+    0:02:21  512185.4      0.08      40.6   19685.8 mat_c_reg[4][2][16]/D     510713024.0000      0.00  
+    0:02:22  512097.1      0.08      39.8   19166.1 mat_c_reg[1][6][15]/D     510724096.0000      0.00  
+    0:02:23  512185.4      0.07      39.3   19051.0 mat_c_reg[1][6][15]/D     510876704.0000      0.00  
+    0:02:24  512428.1      0.07      38.6   18634.2 mat_c_reg[1][3][16]/D     511232576.0000      0.00  
+    0:02:24  512888.1      0.07      37.5   18349.5 mat_c_reg[4][5][17]/D     511964960.0000      0.00  
+    0:02:25  513163.1      0.07      36.6   17964.3 mat_c_reg[1][7][15]/D     512415008.0000      0.00  
+    0:02:26  513477.1      0.07      35.4   17790.5 mat_c_reg[3][4][17]/D     512924992.0000      0.00  
+    0:02:27  513626.4      0.07      35.0   17487.2 mat_c_reg[4][6][16]/D     513159520.0000      0.00  
+    0:02:28  513724.9      0.07      34.6   17151.8 mat_c_reg[6][1][16]/D     513361184.0000      0.00  
+    0:02:28  513752.1      0.07      34.1   16938.7 mat_c_reg[2][5][9]/D      513389856.0000      0.00  
+    0:02:29  514115.3      0.06      33.2   16645.2 mat_c_reg[6][2][16]/D     513891328.0000      0.00  
+    0:02:30  514127.2      0.06      32.5   16203.3 mat_c_reg[1][3][18]/D     513877984.0000      0.00  
+    0:02:31  514393.7      0.06      31.5   15930.9 mat_c_reg[1][0][18]/D     514307232.0000      0.00  
+    0:02:32  514583.8      0.06      31.0   15762.3 mat_c_reg[4][3][14]/D     514521696.0000      0.00  
+    0:02:32  516043.5      0.26     153.7    6969.9 in_data[25]               516389312.0000      0.00  
+    0:02:33  516753.1      0.23     149.6     878.8 mat_c_reg[3][3][17]/D     516727136.0000      0.00  
+    0:02:35  516846.4      0.20     137.2     861.4 mat_c_reg[5][2][16]/D     516664736.0000      0.00  
+    0:02:36  516751.4      0.18     130.9     841.6 mat_c_reg[1][6][15]/D     516349664.0000      0.00  
+    0:02:37  517151.9      0.18     125.8     819.0 mat_c_reg[4][1][7]/D      516811040.0000      0.00  
+    0:02:38  517678.1      0.17     120.6     794.9 mat_c_reg[6][1][16]/D     517545824.0000      0.00  
+    0:02:39  517489.7      0.16     117.6     775.5 mat_c_reg[5][1][16]/D     517264224.0000      0.00  
+    0:02:40  518090.6      0.16     113.4     766.0 mat_c_reg[1][6][15]/D     518066272.0000      0.00  
+    0:02:41  518319.8      0.16     110.8     761.2 mat_c_reg[4][2][13]/D     518294912.0000      0.00  
+    0:02:43  518915.5      0.15     107.0     745.6 mat_c_reg[1][4][14]/D     519265344.0000      0.00  
+    0:02:44  518922.3      0.15     105.5     717.1 mat_c_reg[3][1][19]/D     519411296.0000      0.00  
+    0:02:45  519375.5      0.15     103.3     714.5 mat_c_reg[6][1][18]/D     520106784.0000      0.00  
+    0:02:46  519582.6      0.14     101.7     713.5 mat_c_reg[1][1][15]/D     520320096.0000      0.00  
+    0:02:47  519891.6      0.14      99.8     712.8 mat_c_reg[1][4][14]/D     520669568.0000      0.00  
+    0:02:48  520125.8      0.14      97.9     698.2 mat_c_reg[0][3][14]/D     520948928.0000      0.00  
+    0:02:49  520618.0      0.14      96.0     698.2 mat_c_reg[0][7][13]/D     521617632.0000      0.00  
+    0:02:50  520913.4      0.13      94.6     698.2 mat_c_reg[1][4][19]/D     522033376.0000      0.00  
+    0:02:51  521239.3      0.13      93.2     698.2 mat_c_reg[4][2][13]/D     522454656.0000      0.00  
+    0:02:51  521476.9      0.13      92.2     698.2 mat_c_reg[7][7][15]/D     522779168.0000      0.00  
+    0:02:52  521814.7      0.13      91.3     693.4 mat_c_reg[2][6][12]/D     523189728.0000      0.00  
+    0:02:53  522132.1      0.13      89.9     693.4 mat_c_reg[4][0][15]/D     523636736.0000      0.00  
+    0:02:54  522463.1      0.13      88.8     693.4 mat_c_reg[3][0][19]/D     524073184.0000      0.00  
+    0:02:55  522673.6      0.17      91.0     364.5 net92473                  524251648.0000      0.00  
+    0:02:56  522929.9      0.13      88.0       0.0 mat_c_reg[1][5][13]/D     524612480.0000      0.00  
+    0:02:56  522953.7      0.13      87.6       0.0                           524653696.0000      0.00  
+    0:03:11  531861.6      0.09      39.4   11658.5                           533021632.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:03:11  531861.6      0.09      39.4   11658.5                           533021632.0000      0.00  
+    0:03:12  532034.8      0.07      36.7   11379.7 mat_c_reg[1][6][15]/D     533418912.0000      0.00  
+    0:03:13  532279.2      0.07      35.4   11365.1                           533822272.0000      0.00  
+    0:03:18  535541.6      0.06      28.2   12902.1                           537700928.0000      0.00  
+    0:03:18  535541.6      0.06      28.2   12902.1                           537700928.0000      0.00  
+    0:03:21  495847.9      0.06      24.3   11148.8                           490108224.0000      0.00  
+    0:03:21  495847.9      0.06      24.3   11148.8                           490108224.0000      0.00  
+    0:03:33  507648.2      0.04      13.5   12201.8                           502802752.0000      0.00  
+    0:03:33  507648.2      0.04      13.5   12201.8                           502802752.0000      0.00  
+    0:03:33  507644.8      0.04      13.5   12201.8                           502798048.0000      0.00  
+    0:03:33  507644.8      0.04      13.5   12201.8                           502798048.0000      0.00  
+    0:03:35  510163.8      0.04      12.6   12446.8                           505371040.0000      0.00  
+    0:03:35  510163.8      0.04      12.6   12446.8                           505371040.0000      0.00  
+    0:03:37  512114.1      0.03       6.8   13275.4                           506861056.0000      0.00  
+    0:03:37  512114.1      0.03       6.8   13275.4                           506861056.0000      0.00  
+    0:03:41  514892.7      0.02       4.5   13755.4                           509914112.0000      0.00  
+    0:03:41  514892.7      0.02       4.5   13755.4                           509914112.0000      0.00  
+    0:03:44  516904.1      0.01       0.6   14617.5                           511325856.0000      0.00  
+    0:03:44  516904.1      0.01       0.6   14617.5                           511325856.0000      0.00  
+    0:03:46  517662.9      0.00       0.3   14730.7                           512132896.0000      0.00  
+    0:03:46  517662.9      0.00       0.3   14730.7                           512132896.0000      0.00  
+    0:03:52  517569.5      0.00       0.0   14776.2                           511851040.0000      0.00  
+    0:03:52  517569.5      0.00       0.0   14776.2                           511851040.0000      0.00  
+    0:03:55  517610.2      0.00       0.0   14776.2                           511893632.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:03:55  517610.2      0.00       0.0   14776.2                           511893632.0000      0.00  
+    0:04:00  497798.2      0.01       0.2   13892.4                           489803456.0000      0.00  
+    0:04:00  497579.2      0.01       0.2   13834.9                           489622304.0000      0.00  
+    0:04:00  497579.2      0.01       0.2   13834.9                           489622304.0000      0.00  
+    0:04:03  480413.4      0.01       0.7   13189.1                           468781216.0000      0.00  
+    0:04:08  479797.3      0.01       0.7   13007.4                           468265120.0000      0.00  
+    0:04:10  479233.7      0.01       0.7   12987.1                           467554208.0000      0.00  
+    0:04:12  478247.5      0.01       0.7   12642.3 in_data[31]               466054304.0000      0.00  
+    0:04:14  478322.2      0.01       0.7   12390.3 in_data[59]               466115968.0000      0.00  
+    0:04:15  478539.5      0.00       0.4   12500.4 mat_c_reg[4][0][14]/D     466236928.0000      0.00  
+    0:04:16  478714.3      0.00       0.1   12592.7 mat_c_reg[5][7][15]/D     466317152.0000      0.00  
+    0:04:17  478327.3      0.64     310.4   11288.6 in_data[24]               465640128.0000      0.00  
+    0:04:18  477429.4      0.49     352.8    8585.8 mat_c_reg[7][4][16]/D     464573184.0000      0.00  
+    0:04:19  477682.3      0.37     297.4    8444.2 mat_c_reg[0][2][13]/D     464730144.0000      0.00  
+    0:04:20  478105.0      0.36     288.5    8313.6 mat_c_reg[5][3][15]/D     465186144.0000      0.00  
+    0:04:21  478402.0      0.81     381.3    1239.6 in_data[49]               465040000.0000      0.00  
+    0:04:22  479933.1      0.35     248.1       0.0 mat_c_reg[3][4][13]/D     466824448.0000      0.00  
+    0:04:24  481742.5      0.27     168.0       0.0 mat_c_reg[6][4][18]/D     469119776.0000      0.00  
+    0:04:25  483321.1      0.19     119.2       0.0 mat_c_reg[6][5][14]/D     471148384.0000      0.00  
+    0:04:26  484134.1      0.16     102.6       0.0 mat_c_reg[0][0][19]/D     472029824.0000      0.00  
+    0:04:28  485020.2      0.14      93.9       0.0 mat_c_reg[2][2][13]/D     473124384.0000      0.00  
+    0:04:28  485475.1      0.14      88.1       0.0 mat_c_reg[2][7][13]/D     473648192.0000      0.00  
+    0:04:29  486172.7      0.13      83.2       0.0 mat_c_reg[6][6][16]/D     474443744.0000      0.00  
+    0:04:30  486568.2      0.12      81.5       0.0 mat_c_reg[1][0][15]/D     474874688.0000      0.00  
+    0:04:31  486880.5      0.12      75.5       0.0 mat_c_reg[1][6][17]/D     475117184.0000      0.00  
+    0:04:32  487501.8      0.11      70.0       0.0 mat_c_reg[4][2][17]/D     475756288.0000      0.00  
+    0:04:33  488218.1      0.10      66.7       0.0 mat_c_reg[0][1][17]/D     476656000.0000      0.00  
+    0:04:34  488786.7      0.10      64.2       0.0 mat_c_reg[6][5][14]/D     477386112.0000      0.00  
+    0:04:35  489328.2      0.09      61.8       0.0 mat_c_reg[5][2][16]/D     477951040.0000      0.00  
+    0:04:36  489791.6      0.09      60.9       0.0 mat_c_reg[1][2][16]/D     478495968.0000      0.00  
+    0:04:37  490484.1      0.09      58.6       0.0 mat_c_reg[7][3][12]/D     479404320.0000      0.00  
+    0:04:38  491052.7      0.09      57.3       0.0 mat_c_reg[5][7][13]/D     480080608.0000      0.00  
+    0:04:39  491696.0      0.09      55.6       0.0 mat_c_reg[5][6][18]/D     480956544.0000      0.00  
+    0:04:40  492271.5      0.08      53.9       0.0 mat_c_reg[0][3][16]/D     481632512.0000      0.00  
+    0:04:41  492687.3      0.08      51.8       0.0 mat_c_reg[6][3][14]/D     482137824.0000      0.00  
+    0:04:42  493412.1      0.08      50.1       0.0 mat_c_reg[6][6][14]/D     483107744.0000      0.00  
+    0:04:43  493766.9      0.08      48.8       0.0 mat_c_reg[6][6][16]/D     483491840.0000      0.00  
+    0:04:43  494184.4      0.08      47.7       0.0 mat_c_reg[2][7][13]/D     483978240.0000      0.00  
+    0:04:44  494255.7      0.07      46.7       0.0 mat_c_reg[0][7][13]/D     484018720.0000      0.00  
+    0:04:45  494549.4      0.07      45.9       0.0 mat_c_reg[3][2][13]/D     484385856.0000      0.00  
+    0:04:46  494798.9      0.07      44.8       0.0 mat_c_reg[1][6][17]/D     484625472.0000      0.00  
+    0:04:47  495320.0      0.07      43.5       0.0 mat_c_reg[2][7][18]/D     485236160.0000      0.00  
+    0:04:48  495732.5      0.07      42.1       0.0 mat_c_reg[6][5][17]/D     485766240.0000      0.00  
+    0:04:48  495893.7      0.07      40.9       0.0 mat_c_reg[5][1][15]/D     485979488.0000      0.00  
+    0:04:49  496143.2      0.07      39.8       0.0 mat_c_reg[2][4][14]/D     486276000.0000      0.00  
+    0:04:50  496369.0      0.07      39.1       0.0                           486583648.0000      0.00  
+    0:04:55  495379.4      0.00       0.0   11179.5                           485329024.0000      0.00  
+    0:04:55  495379.4      0.00       0.0   11179.5                           485329024.0000      0.00  
+    0:04:55  495379.4      0.00       0.0   11179.5                           485329024.0000      0.00  
+    0:04:55  495379.4      0.00       0.0   11179.5                           485329024.0000      0.00  
+    0:04:55  495379.4      0.00       0.0   11179.5                           485329024.0000      0.00  
+    0:04:59  473513.5      0.00       0.0    9594.9                           453887104.0000      0.00  
+Loading db file '/EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'MATRIX_MULT' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 1881 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#uniquify
+#compile
+#======================================================
+#  (F) Output Reports 
+#======================================================
+report_design  >  Report/$DESIGN\.design
+report_resource >  Report/$DESIGN\.resource
+report_timing -max_paths 3 >  Report/$DESIGN\.timing
+report_area >  Report/$DESIGN\.area
+report_power > Report/$DESIGN\.power
+report_clock > Report/$DESIGN\.clock
+report_port >  Report/$DESIGN\.port
+report_power >  Report/$DESIGN\.power
+#report_reference > Report/$DESIGN\.reference
+#======================================================
+#  (G) Change Naming Rule
+#======================================================
+set bus_inference_style "%s\[%d\]"
+%s[%d]
+set bus_naming_style "%s\[%d\]"
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _" -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed "a-z A-Z 0-9 _[]" -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+#======================================================
+#  (H) Output Results
+#======================================================
+set verilogout_higher_designs_first true
+true
+write -format verilog -output Netlist/$DESIGN\_SYN.v -hierarchy
+Writing verilog file '/home/VLSILAB45/Lab3/02_SYN/Netlist/MATRIX_MULT_SYN.v'.
+1
+write -format ddc     -hierarchy -output $DESIGN\_SYN.ddc
+Writing ddc file 'MATRIX_MULT_SYN.ddc'.
+1
+write_sdf -version 3.0 -context verilog -load_delay cell Netlist/$DESIGN\_SYN.sdf -significant_digits 6
+Information: Writing timing information to file '/home/VLSILAB45/Lab3/02_SYN/Netlist/MATRIX_MULT_SYN.sdf'. (WT-3)
+1
+write_sdc Netlist/$DESIGN\_SYN.sdc
+1
+#======================================================
+#  (I) Finish and Quit
+#======================================================
+report_area
+ 
+****************************************
+Report : area
+Design : MATRIX_MULT
+Version: U-2022.12
+Date   : Thu May  7 05:49:53 2026
+****************************************
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+Number of ports:                           88
+Number of nets:                         33559
+Number of cells:                        31902
+Number of combinational cells:          29954
+Number of sequential cells:              1881
+Number of macros/black boxes:               0
+Number of buf/inv:                       6109
+Number of references:                     151
+
+Combinational area:             411280.016796
+Buf/Inv area:                    26258.777660
+Noncombinational area:           62233.474348
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                473513.491144
+Total area:                 undefined
+1
+report_timing 
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : MATRIX_MULT
+Version: U-2022.12
+Date   : Thu May  7 05:49:53 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: in_data[17]
+              (input port clocked by clk)
+  Endpoint: mat_c_reg_7__5__16_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     2.15       2.15 f
+  in_data[17] (in)                         0.00       2.15 f
+  U14661/Y (XOR2X4)                        0.21       2.36 f
+  U5108/Y (OAI22X1)                        0.18       2.54 r
+  U18991/S (ADDFHX2)                       0.33       2.86 r
+  U17033/Y (NOR2X2)                        0.06       2.92 f
+  U7078/Y (OAI21X2)                        0.11       3.03 r
+  U6580/Y (INVX1)                          0.06       3.09 f
+  U14652/Y (OA21X4)                        0.19       3.28 f
+  U21359/Y (OAI21X2)                       0.11       3.38 r
+  U6379/Y (OAI2BB1X4)                      0.15       3.53 r
+  U14370/Y (NAND3X2)                       0.08       3.61 f
+  U6498/Y (NAND2X4)                        0.10       3.71 r
+  U28864/Y (AOI21X1)                       0.07       3.79 f
+  U28867/Y (XOR2XL)                        0.14       3.92 f
+  U28868/Y (OAI2BB1X2)                     0.16       4.08 f
+  mat_c_reg_7__5__16_/D (DFFHQX4)          0.00       4.08 f
+  data arrival time                                   4.08
+
+  clock clk (rise edge)                    4.30       4.30
+  clock network delay (ideal)              0.00       4.30
+  clock uncertainty                       -0.10       4.20
+  mat_c_reg_7__5__16_/CK (DFFHQX4)         0.00       4.20 r
+  library setup time                      -0.12       4.08
+  data required time                                  4.08
+  -----------------------------------------------------------
+  data required time                                  4.08
+  data arrival time                                  -4.08
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
+exit
+
+Memory usage for this session 313 Mbytes.
+Memory usage for this session including child processes 678 Mbytes.
+CPU usage for this session 799 seconds ( 0.22 hours ).
+Elapsed time for this session 315 seconds ( 0.09 hours ).
+
+Thank you...
+

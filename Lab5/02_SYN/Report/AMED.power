@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : AMED
+Version: U-2022.12
+Date   : Tue Jun 16 03:53:11 2026
+****************************************
+
+
+Library(s) Used:
+
+    slow (File: /EDA_LIB/LIB/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db)
+
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  = 798.9977 uW   (87%)
+  Net Switching Power  = 122.7611 uW   (13%)
+                         ---------
+Total Dynamic Power    = 921.7587 uW  (100%)
+
+Cell Leakage Power     =  26.6842 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.5580            0.0000            0.0000            0.5580  (  58.84%)  i
+register       5.9395e-02        1.2650e-02        6.7306e+06        7.8775e-02  (   8.31%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.1816            0.1101        1.9954e+07            0.3116  (  32.86%)
+--------------------------------------------------------------------------------------------------
+Total              0.7990 mW         0.1228 mW     2.6684e+07 pW         0.9484 mW
+1
